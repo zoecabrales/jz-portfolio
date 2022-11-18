@@ -11,6 +11,19 @@ import {
 import "./FooterStyles.css";
 
 const Footer = () => {
+  const navToFacebook = () => {
+    return (window.location.href = "https://www.facebook.com/");
+  };
+
+  const navToLinkedIn = () => {
+    return (window.location.href =
+      "https://www.linkedin.com/in/jireh-zoe-cabrales-74ba5164/");
+  };
+
+  const navToGithub = () => {
+    return (window.location.href = "https://github.com/zoecabrales");
+  };
+
   return (
     <div className="footer">
       <div className="footer-container">
@@ -53,18 +66,21 @@ const Footer = () => {
               <FaFacebook
                 size={30}
                 style={{ color: "#fff", marginRight: "2rem" }}
+                onClick={navToFacebook}
               />
             </div>
             <div className="social-fb">
               <FaLinkedin
                 size={30}
                 style={{ color: "#fff", marginRight: "2rem" }}
+                onClick={navToLinkedIn}
               />
             </div>
             <div className="social-fb">
               <FaGithub
                 size={30}
                 style={{ color: "#fff", marginRight: "2rem" }}
+                onClick={navToGithub}
               />
             </div>
           </div>
