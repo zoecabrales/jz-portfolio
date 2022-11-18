@@ -1,0 +1,63 @@
+.about{
+    width: 100%;
+    padding: 6rem 1rem;
+    background-color: black;
+}
+
+.title{
+    text-align: center;
+    margin: auto;
+    padding: 1rem;
+    max-width: 350px;
+}
+
+.left p{
+    margin: 1.2rem 0;
+}
+
+.btn-about{
+    margin: 2rem 0;
+}
+
+.btn-about:hover{
+    border-radius: 20px;
+}
+
+.about-container{
+    max-width: 1140px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+}
+
+.about-card{
+    border: 1px solid #eee;
+    color: #eee;
+    text-align: center;
+    padding: 1rem;
+}
+
+.about-card:hover{
+    background-color: #141414;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.about-card h3{
+    font-size: 1.4rem;
+    padding: 1rem;
+}
+
+.about-card p{
+    padding: 10px 0;
+}
+
+@media screen and (max-width:740px) {
+    .about-container {
+        max-width: 90%;
+        margin: auto;
+        row-gap: 35px;
+        grid-template-columns: 1fr;
+    }     
+}
