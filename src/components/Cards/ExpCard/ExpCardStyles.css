@@ -1,10 +1,10 @@
-.pricing{
+.exp{
     width: 100%;
     padding: 6rem 1rem;
-    background-color:white;
+    background-color:black;
 }
 
-.card-container{
+.exp-card-container{
     max-width: 1140px;
     margin: auto;
     display: grid;
@@ -12,32 +12,32 @@
     column-gap: 40px;
 }
 
-.card{
-    border: 1px solid black;
-    color: black;
-    text-align: center;
+.exp-card{
+    border: 1px solid white;
+    color: white;
     padding: 1rem;
 }
 
-.card:hover{
-    background-color: #c95546;
+.exp-card:hover{
+    background-color: black;
     border-radius: 30px;
     transition: 0.3s;
 }
 
-.card h3{
+.exp-card h3{
     font-size: 1.4rem;
     padding: 1rem;
-    color: black;
+    color: white;
+    justify-content: left;
 }
 
-.card p{
+.exp-card p{
     padding: 10px 0;
-    color: black;
+    color: white;
 }
 
 .bar-line{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
     width: 30%;
     margin: 1.5rem auto;
     display: block;
@@ -57,7 +57,7 @@
 }
 
 @media screen and (max-width:740px) {
-    .card-container {
+    .exp-card-container {
         max-width: 90%;
         margin: auto;
         row-gap: 35px;

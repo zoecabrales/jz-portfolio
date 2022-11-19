@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const [color, setColor] = useState(false);
   const changeColor = () => {
-    if (window.scrollY >= 100) {
+    if (window.scrollY >= 1) {
       setColor(true);
     } else {
       setColor(false);
@@ -22,19 +22,24 @@ const Navbar = () => {
   return (
     <div className={color ? "header header-bg" : "header"}>
       <Link to="/">
-        <h1 style={{ fontFamily: "sans-serif", fontStyle: "oblique" }}>
+        <h1
+          style={{ fontFamily: "Montserrat sans-serif", fontStyle: "normal" }}
+        >
           JZ Portfolio
         </h1>
       </Link>
       <ul className={click ? "nav-menu active" : "nav-menu"}>
         <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/project">Project</Link>
+          <Link to="/project">Projects</Link>
         </li>
         <li>
           <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/certifications">Certifications</Link>
+        </li>
+        <li>
+          <Link to="/work">Work Experiences</Link>
         </li>
         <li>
           <Link to="/contact">Contact</Link>
