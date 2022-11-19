@@ -29,7 +29,7 @@
 }
 
 .nav-menu li a:hover{
-    text-decoration: underline;
+    text-decoration:overline;
 }
 
 .hamburger {
