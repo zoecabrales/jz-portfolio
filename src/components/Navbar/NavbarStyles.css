@@ -28,6 +28,10 @@
     font-weight: 500;
 }
 
+.nav-menu li a:hover{
+    text-decoration: underline;
+}
+
 .hamburger {
     display: none;
 }
