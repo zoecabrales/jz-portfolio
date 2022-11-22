@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import HeroImg2 from "../components/Project/HeroImg2";
-import ExpCard from "../components/Cards/ExpCard/ExpCard";
+import Exp from "../components/data/Exp";
 
 const WorkExp = () => {
   return (
@@ -12,7 +12,7 @@ const WorkExp = () => {
         heading="WORK EXP"
         text="Listed below are some of my Professional Career highlights as a Frontend Developer"
       />
-      <ExpCard />
+      <Exp />
       <Footer />
     </div>
   );

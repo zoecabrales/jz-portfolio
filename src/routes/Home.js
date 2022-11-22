@@ -4,7 +4,7 @@ import HeroImg from "../components/Home/HeroImg";
 import Footer from "../components/Footer/Footer";
 import Work from "../components/data/Work";
 import About from "../components/About/AboutContent";
-import WorkExp from "../components/Cards/ExpCard/ExpCard";
+import CertCard from "../components/Cards/CertCard/CertCard";
 
 const Home = ({ heading, text }) => {
   return (
@@ -13,10 +13,7 @@ const Home = ({ heading, text }) => {
       <HeroImg />
       <Work />
       <About />
-      <WorkExp
-        heading="Work Experiences"
-        text="Professional career highlights"
-      />
+      <CertCard />
       <Footer />
     </div>
   );

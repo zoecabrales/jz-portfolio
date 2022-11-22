@@ -2,9 +2,7 @@ import React from "react";
 
 import "./WorkCardStyles.css";
 
-// import { NavLink } from "react-router-dom";
-
-const WorkCard = ({ imgsrc, title, text, view, source }) => {
+const WorkCard = ({ imgsrc, title, text, view }) => {
   return (
     <div className="project-card">
       <img src={imgsrc} alt="pro" />
