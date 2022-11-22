@@ -3,11 +3,32 @@ import "./CertCardStyles.css";
 import React from "react";
 // import { Link } from "react-router-dom";
 
-const CertCard = () => {
+const CertCard = ({ heading }) => {
   return (
     <div className="heading">
-      <h4 style={{ marginTop: "50px" }}>Hover and click the list.</h4>
-      <div className="pricing">
+      <h2>{heading}</h2>
+      <h4
+        style={{ marginTop: "50px" }}
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="500"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="true"
+      >
+        Hover and click the list.
+      </h4>
+      <div
+        className="pricing"
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="500"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="true"
+      >
         <div className="card-container">
           <div className="card">
             <h3>- Udemy -</h3>

@@ -12,7 +12,7 @@ const Certs = () => {
         heading="CERTIFICATES"
         text="Here are few of the UDEMY certifications I have acquired so far."
       />
-      <CertCard />
+      <CertCard heading="Certificates" />
       <Footer />
     </div>
   );

@@ -27,7 +27,16 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-container">
-        <div className="left">
+        <div
+          className="left"
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="500"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="true"
+        >
           <div className="location">
             <FaHome size={20} style={{ color: "#fff", marginRight: "2rem" }} />
             <div>
@@ -54,7 +63,16 @@ const Footer = () => {
             </h4>
           </div>
         </div>
-        <div className="right">
+        <div
+          className="right"
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="500"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="true"
+        >
           <h4>About Me</h4>
           <p>
             I am a Junior Frontend Developer with 2 years of experience in
@@ -62,21 +80,21 @@ const Footer = () => {
             design challenges
           </p>
           <div className="social">
-            <div className="social-fb">
+            <div className="social-fb" data-aos="zoom-in" data-aos-delay="100">
               <FaFacebook
                 size={30}
                 style={{ color: "#fff", marginRight: "2rem" }}
                 onClick={navToFacebook}
               />
             </div>
-            <div className="social-fb">
+            <div className="social-fb" data-aos="zoom-in" data-aos-delay="200">
               <FaLinkedin
                 size={30}
                 style={{ color: "#fff", marginRight: "2rem" }}
                 onClick={navToLinkedIn}
               />
             </div>
-            <div className="social-fb">
+            <div className="social-fb" data-aos="zoom-in" data-aos-delay="300">
               <FaGithub
                 size={30}
                 style={{ color: "#fff", marginRight: "2rem" }}

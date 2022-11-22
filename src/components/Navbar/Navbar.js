@@ -24,24 +24,31 @@ const Navbar = () => {
       <Link to="/">
         <h1
           style={{ fontFamily: "Montserrat sans-serif", fontStyle: "normal" }}
+          data-aos="fade-down"
+          data-aos-delay="300"
         >
           JZ Portfolio
         </h1>
       </Link>
-      <ul className={click ? "nav-menu active" : "nav-menu"}>
-        <li>
+      <ul
+        className={click ? "nav-menu active" : "nav-menu"}
+        data-aos="fade-down"
+        data-aos-delay="100"
+        
+      >
+        <li data-aos="fade-down" data-aos-delay="200" >
           <Link to="/project">Projects</Link>
         </li>
-        <li>
+        <li data-aos="fade-down" data-aos-delay="300">
           <Link to="/about">About</Link>
         </li>
-        <li>
+        <li data-aos="fade-down" data-aos-delay="400">
           <Link to="/certifications">Certifications</Link>
         </li>
-        <li>
+        <li data-aos="fade-down" data-aos-delay="500">
           <Link to="/work">Work Experiences</Link>
         </li>
-        <li>
+        <li data-aos="fade-down" data-aos-delay="600">
           <Link to="/contact">Contact</Link>
         </li>
       </ul>
