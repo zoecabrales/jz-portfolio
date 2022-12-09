@@ -35,7 +35,9 @@ const AboutContent = () => {
             <p>Firebase</p>
             <p>Redux / Context API</p>
             <p>Axios / Fetch</p>
-            <p>CSS / SASS / Styled Components</p>
+            <p>CSS / SASS / Styled Components / MUI</p>
+            <p>Node JS</p>
+            <p>mySQL DB </p>
           </div>
           <div
             className="about-card"
@@ -71,9 +73,8 @@ const AboutContent = () => {
             <p>Github / GitLab</p>
             <p>ESLint</p>
             <p>Prettier</p>
-            <p>ES7 Snippets</p>
+            <p>ES6 Snippets</p>
             <p>Gitlens</p>
-            <p>NPM Intellisense</p>
           </div>
         </div>
       </div>
