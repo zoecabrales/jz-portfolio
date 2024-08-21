@@ -37,11 +37,11 @@ const Navbar = () => {
             About
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/certifications" onClick={() => setClick(false)}>
             Certifications
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/work" onClick={() => setClick(false)}>
             Work Experiences

@@ -1,9 +1,17 @@
-import "./AboutContentStyles.css";
-
 import React from "react";
 import { Link } from "react-router-dom";
+import YouTube from "react-youtube";
+import "./AboutContentStyles.css";
 
 const AboutContent = () => {
+  const videoOptions = {
+    height: "540", // YouTube theater mode height
+    width: "960", // YouTube theater mode width
+    playerVars: {
+      autoplay: 0,
+    },
+  };
+
   return (
     <div className="about">
       <div className="heading">
@@ -17,6 +25,7 @@ const AboutContent = () => {
             Contact
           </button>
         </Link>
+
         <div className="about-container">
           <div
             className="about-card"
@@ -77,6 +86,10 @@ const AboutContent = () => {
             <p>Gitlens</p>
           </div>
         </div>
+      </div>
+      {/* Embed YouTube video */}
+      <div className="video-container" data-aos="fade-up">
+        <YouTube videoId="QSURtD1gro8" opts={videoOptions} />
       </div>
     </div>
   );
