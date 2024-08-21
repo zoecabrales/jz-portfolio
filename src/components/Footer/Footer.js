@@ -75,9 +75,9 @@ const Footer = () => {
         >
           <h4>About Me</h4>
           <p>
-            I am a Junior Frontend Developer with 2 years of experience in
-            software development, I enjoy discussing new project ideas and
-            design challenges
+            I am a Software Developer with 3+ years of experience in software
+            development, I enjoy discussing new project ideas and design
+            challenges.
           </p>
           <div className="social">
             <div className="social-fb" data-aos="zoom-in" data-aos-delay="100">

@@ -1,17 +1,15 @@
 const ExpCardData = [
   {
-    company: "Old St Labs",
-    project: "Kopona",
-    role: "Junior Frontend Developer",
-    duties: [
-      "Code Refactoring",
-      "Bug fixing",
-      "Created UX features",
-      "Deployment to AWS S3 bucket",
-      "Convert code from JS to Typescript",
-      "Hands on with REST API",
-      "React",
-    ],
+    company: "Fay Financial",
+    project: "Applications Development",
+    role: "ServiceNow Admin/Developer",
+    duties: [],
+  },
+  {
+    company: "SDH Immigration Services",
+    project: "PollenLov",
+    role: "React Native Developer",
+    duties: [],
   },
   {
     company: "Viseo",
@@ -24,20 +22,6 @@ const ExpCardData = [
       "Test flight deployment",
       "Arabic language implementation",
       "React Native",
-    ],
-  },
-  {
-    company: "Ridehero",
-    project: "Aguila",
-    role: "Junior Sofware Engineer",
-    duties: [
-      "Code Refactoring",
-      "Push Notifs for iOS and Android",
-      "Bug fixing",
-      "Used MVVM design",
-      "Assist on Websockets",
-      "Code refactoring",
-      "Xamarin",
     ],
   },
 ];

@@ -13,28 +13,9 @@ const HeroImg = () => {
         <img className="intro-img" src={IntroImg2} alt="IntroImg" />
       </div>
       <div className="content">
-        <p
-          data-aos="fade-left"
-          data-aos-offset="200"
-          data-aos-delay="300"
-          data-aos-duration="500"
-        >
-          Hi, I am a Full-Time FrontEnd
-        </p>
-        <h1
-          data-aos="fade-left"
-          data-aos-offset="200"
-          data-aos-delay="300"
-          data-aos-duration="500"
-        >
-          React Developer.
-        </h1>
-        <div
-          data-aos="fade-left"
-          data-aos-offset="200"
-          data-aos-delay="150"
-          data-aos-duration="500"
-        >
+        <p>Hi, I am a Full-Time</p>
+        <h1>Software Developer.</h1>
+        <div>
           <Link to="/project" className="btn">
             Projects
           </Link>
@@ -46,10 +27,6 @@ const HeroImg = () => {
               src={Avatar2}
               alt="profile"
               style={{ borderRadius: "50% 0 50% 50%" }}
-              data-aos="fade-right"
-              data-aos-offset="200"
-              data-aos-delay="300"
-              data-aos-duration="700"
             />
           </div>
         </div>
