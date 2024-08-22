@@ -1,6 +1,6 @@
 import "./FormStyles.css";
-
 import React from "react";
+// import RecentMostUpdatedResume from "./RecentMostUpdatedResume.pdf";
 
 const Form = () => {
   return (
@@ -21,6 +21,19 @@ const Form = () => {
           Submit
         </button>
       </form>
+      <div className="or-divider">
+        <span>OR</span>
+      </div>
+      <div className="resume-download">
+        <a
+          href="https://drive.google.com/file/d/1sf0k4StPm2lKF3TPjx6-XOi3gnVNLtMy/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn"
+        >
+          Download Resume
+        </a>
+      </div>
     </div>
   );
 };
