@@ -1,4 +1,3 @@
-// AboutCard.js
 import React from "react";
 
 const AboutCard = ({ title, items }) => {

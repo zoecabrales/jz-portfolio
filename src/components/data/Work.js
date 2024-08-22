@@ -1,8 +1,5 @@
 import React from "react";
 
-import WorkCardData from "./WorkCardData";
-import WorkCard from "../Cards/WorkCard/WorkCard";
-
 const Work = () => {
   return (
     <div className="work-container">
