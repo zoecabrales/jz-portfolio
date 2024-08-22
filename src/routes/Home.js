@@ -12,10 +12,9 @@ const Home = ({ heading, text }) => {
     <div>
       <Navbar />
       <HeroImg />
-      <Work />
+      {/* <Work /> */}
       <Exp />
       <About />
-      <CertCard />
       <Footer />
     </div>
   );

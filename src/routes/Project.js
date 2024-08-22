@@ -9,8 +9,11 @@ const Project = () => {
   return (
     <div>
       <Navbar />
-      <HeroImg2 heading="PROJECTS" text="Some of my recent works." />
-      <Work />
+      <HeroImg2
+        heading="PROJECTS"
+        text="I will be posting some of my personal projects soon..."
+      />
+      {/* <Work /> */}
       <Footer />
     </div>
   );
