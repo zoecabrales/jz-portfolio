@@ -6,6 +6,7 @@ import {
   FaHome,
   FaLinkedin,
   FaPhone,
+  FaYoutube,
 } from "react-icons/fa";
 
 import "./FooterStyles.css";
@@ -22,6 +23,11 @@ const Footer = () => {
 
   const navToGithub = () => {
     return (window.location.href = "https://github.com/zoecabrales");
+  };
+
+  const navToYT = () => {
+    return (window.location.href =
+      "https://www.youtube.com/@jirehzoecabrales5060");
   };
 
   return (
@@ -99,6 +105,13 @@ const Footer = () => {
                 size={30}
                 style={{ color: "#fff", marginRight: "2rem" }}
                 onClick={navToGithub}
+              />
+            </div>
+            <div className="social-fb" data-aos="zoom-in" data-aos-delay="300">
+              <FaYoutube
+                size={30}
+                style={{ color: "#fff", marginRight: "2rem" }}
+                onClick={navToYT}
               />
             </div>
           </div>
