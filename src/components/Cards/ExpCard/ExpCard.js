@@ -1,9 +1,12 @@
 import React from "react";
 import "./ExpCardStyles.css";
+import { useTheme } from "../../../context/ThemeContext"; // Import the useTheme hook
 
 const ExpCard = ({ company, project, role, duties }) => {
+  const { theme } = useTheme(); // Get the current theme
+
   return (
-    <div className="exp-card">
+    <div className={`exp-card ${theme}`}>
       <h2>{`Company: ${company}`}</h2>
       <h4>{`Project: ${project}`}</h4>
       <p>{`Role: ${role}`}</p>

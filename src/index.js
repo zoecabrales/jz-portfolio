@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from "./hooks/scrollToTop";
+import { ThemeProvider } from "./context/ThemeContext";
 
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 
 ReactDOM.render(
-  <BrowserRouter>
-    <ScrollToTop />
-    <App />
-  </BrowserRouter>,
+  <ThemeProvider>
+    <BrowserRouter>
+      <ScrollToTop />
+      <App />
+    </BrowserRouter>
+  </ThemeProvider>,
   document.getElementById("root")
 );

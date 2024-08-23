@@ -61,6 +61,18 @@
   margin-left: 1rem;
   text-indent: -1rem;
 }
+.exp-card.dark {
+  background-color: #222;
+  color: white;
+  border: 1px solid white;
+}
+
+.exp-card.light {
+  background-color: #f9f9f9;
+  color: black;
+  border: 1px solid #ccc;
+}
+
 
 @media screen and (max-width: 740px) {
   .exp-card-container {
