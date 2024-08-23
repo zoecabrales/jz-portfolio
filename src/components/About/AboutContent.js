@@ -54,9 +54,6 @@ const AboutContent = () => {
         ))}
       </div>
 
-
-
-
       <div className="social-media-title" data-aos="fade-up">
         <h2>Check Out My YouTube Channel!</h2>
       </div>

@@ -1,10 +1,10 @@
-.pricing{
+.pricing {
     width: 100%;
     padding: 6rem 1rem;
-    background-color:black;
+    /* background: linear-gradient(135deg, #000428, #004e92); */
 }
 
-.card-container{
+.card-container {
     max-width: 1140px;
     margin: auto;
     display: grid;
@@ -12,55 +12,58 @@
     column-gap: 40px;
 }
 
-.card{
+.card {
     border: 1px solid white;
     color: white;
     text-align: center;
     padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    transition: background-color 0.3s, border-radius 0.3s;
 }
 
-.card:hover{
-    background-color: black;
-    border-radius: 30px;
-    transition: 0.3s;
+.card:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+   transform: translateY(-5px); /* Elevate on hover */
 }
 
-.card h3{
+.card h3 {
     font-size: 1.4rem;
     padding: 1rem;
     color: white;
 }
 
-.card p{
+.card p {
     padding: 10px 0;
     color: white;
 }
 
-.bar-line{
+.bar-line {
     border-bottom: 1px solid white;
     width: 30%;
     margin: 1.5rem auto;
     display: block;
 }
 
-.btc{
+.btc {
     font-size: 3rem;
     font-weight: 500;
     padding: 1rem 0;
 }
 
-.btn-price{
+.btn-price {
     border-radius: 50px;
     display: block;
     width: 80%;
     margin: 2rem auto;
 }
 
-@media screen and (max-width:740px) {
+@media screen and (max-width: 740px) {
     .card-container {
         max-width: 90%;
         margin: auto;
         row-gap: 35px;
         grid-template-columns: 1fr;
-    }   
+    }
 }

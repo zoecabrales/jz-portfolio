@@ -5,6 +5,7 @@ import React from "react";
 const CertCard = ({ heading }) => {
   return (
     <div className="heading">
+      <h1>My Digital Certifications</h1>
       <h2>{heading}</h2>
       <h4
         style={{ marginTop: "50px" }}

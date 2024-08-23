@@ -1,59 +1,72 @@
 .exp {
-    width: 100%;
-    padding: 6rem 1rem;
-    background-color: black;
-  }
-  
-  .exp-heading {
-    text-align: center;
-    color: white;
-    margin-bottom: 3rem;
-  }
-  
+  width: 100%;
+  padding: 6rem 1rem;
+  /* background: linear-gradient(135deg, #000428, #000428 ); */
+  color: white;
+}
+
+.exp-heading {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.exp-card-container {
+  max-width: 1140px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 40px;
+  row-gap: 40px;
+}
+
+.exp-card {
+  background: rgba(255, 255, 255, 0.1); /* Transparent white */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: background-color 0.3s, border-radius 0.3s, transform 0.3s;
+}
+
+.exp-card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  transform: translateY(-5px); /* Elevate on hover */
+}
+
+.exp-card h2 {
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.exp-card h4 {
+  font-size: 1.3rem;
+  padding-bottom: 0.5rem;
+  color: #ccc;
+}
+
+.exp-card p {
+  padding: 0.5rem 0;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.duties p {
+  margin-left: 1rem;
+  text-indent: -1rem;
+}
+
+@media screen and (max-width: 740px) {
   .exp-card-container {
-    max-width: 1140px;
+    max-width: 90%;
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 40px;
+    grid-template-columns: 1fr;
+    row-gap: 35px;
   }
-  
-  .exp-card {
-    border: 1px solid white;
-    color: white;
-    padding: 1rem;
-    border-radius: 15px;
-    transition: background-color 0.3s, border-radius 0.3s;
-  }
-  
-  .exp-card:hover {
-    background-color: #222;
-    border-radius: 20px;
-  }
-  
-  .exp-card h2 {
-    font-size: 1.4rem;
-    padding-bottom: 1rem;
-    color: white;
-  }
-  
-  .exp-card h4 {
-    font-size: 1.2rem;
-    padding-bottom: 0.5rem;
-    color: #ccc;
-  }
-  
-  .exp-card p {
-    padding: 0.5rem 0;
-    color: white;
-  }
-  
-  @media screen and (max-width: 740px) {
-    .exp-card-container {
-      max-width: 90%;
-      margin: auto;
-      row-gap: 35px;
-      grid-template-columns: 1fr;
-    }
-  }
-  
+}
