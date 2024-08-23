@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import YouTube from "react-youtube";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -26,7 +25,7 @@ const AboutContent = () => {
   const techIcons = [
     { icon: faHtml5, label: "HTML" },
     { icon: faCss3Alt, label: "CSS" },
-    { icon: faSquareJs, label: "Javascript" },
+    { icon: faSquareJs, label: "JavaScript" },
     { icon: faReact, label: "React" },
     { icon: faGithub, label: "GitHub" },
     { icon: faGoogle, label: "Firebase" },
@@ -55,16 +54,13 @@ const AboutContent = () => {
         ))}
       </div>
 
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+
+
+
       <div className="social-media-title" data-aos="fade-up">
         <h2>Check Out My YouTube Channel!</h2>
       </div>
 
-      {/* Embed YouTube video */}
       <div className="video-container" data-aos="fade-up">
         <YouTube videoId="QSURtD1gro8" opts={videoOptions} />
       </div>

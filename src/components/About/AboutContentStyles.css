@@ -78,6 +78,7 @@
     justify-content: center;
     gap: 2rem; /* Adjust the gap as needed */
     margin: 2rem 0; /* Space around the icons */
+    margin-bottom: 200px;
   }
   
   .tech-icon {
