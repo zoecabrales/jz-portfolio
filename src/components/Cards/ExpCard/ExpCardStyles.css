@@ -1,66 +1,59 @@
-.exp{
+.exp {
     width: 100%;
     padding: 6rem 1rem;
-    background-color:black;
-}
-
-.exp-card-container{
+    background-color: black;
+  }
+  
+  .exp-heading {
+    text-align: center;
+    color: white;
+    margin-bottom: 3rem;
+  }
+  
+  .exp-card-container {
     max-width: 1140px;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 40px;
-}
-
-.exp-card{
+  }
+  
+  .exp-card {
     border: 1px solid white;
     color: white;
     padding: 1rem;
-}
-
-.exp-card:hover{
-    background-color: black;
-    border-radius: 30px;
-    transition: 0.3s;
-}
-
-.exp-card h3{
+    border-radius: 15px;
+    transition: background-color 0.3s, border-radius 0.3s;
+  }
+  
+  .exp-card:hover {
+    background-color: #222;
+    border-radius: 20px;
+  }
+  
+  .exp-card h2 {
     font-size: 1.4rem;
-    padding: 1rem;
+    padding-bottom: 1rem;
     color: white;
-    justify-content: left;
-}
-
-.exp-card p{
-    padding: 10px 0;
+  }
+  
+  .exp-card h4 {
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+    color: #ccc;
+  }
+  
+  .exp-card p {
+    padding: 0.5rem 0;
     color: white;
-}
-
-.bar-line{
-    border-bottom: 1px solid white;
-    width: 30%;
-    margin: 1.5rem auto;
-    display: block;
-}
-
-.btc{
-    font-size: 3rem;
-    font-weight: 500;
-    padding: 1rem 0;
-}
-
-.btn-price{
-    border-radius: 50px;
-    display: block;
-    width: 80%;
-    margin: 2rem auto;
-}
-
-@media screen and (max-width:740px) {
+  }
+  
+  @media screen and (max-width: 740px) {
     .exp-card-container {
-        max-width: 90%;
-        margin: auto;
-        row-gap: 35px;
-        grid-template-columns: 1fr;
-    }   
-}
+      max-width: 90%;
+      margin: auto;
+      row-gap: 35px;
+      grid-template-columns: 1fr;
+    }
+  }
+  

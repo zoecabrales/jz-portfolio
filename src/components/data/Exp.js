@@ -1,11 +1,12 @@
+import React from "react";
 import ExpCard from "../Cards/ExpCard/ExpCard";
 import ExpCardData from "../data/ExpCardData";
 
 const Exp = () => {
   return (
-    <div className="work-container">
-      <h1 className="project-heading">Professional Work Experiences</h1>
-      <div className="project-container">
+    <div className="exp">
+      <h1 className="exp-heading">Professional Work Experiences</h1>
+      <div className="exp-card-container">
         {ExpCardData.map((value, index) => {
           return (
             <ExpCard

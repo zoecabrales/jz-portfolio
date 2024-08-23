@@ -1,7 +1,17 @@
 import React from "react";
-import AboutCard from "../data/AboutCard";
 import { Link } from "react-router-dom";
 import YouTube from "react-youtube";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHtml5,
+  faCss3Alt,
+  faReact,
+  faGithub,
+  faSquareJs,
+  faGoogle,
+  faServicestack,
+  faMicrosoft,
+} from "@fortawesome/free-brands-svg-icons";
 import "./AboutContentStyles.css";
 
 const AboutContent = () => {
@@ -13,32 +23,15 @@ const AboutContent = () => {
     },
   };
 
-  const techStack = [
-    "HTML",
-    "Javascript / Typescript",
-    "React / React Native",
-    "Firebase",
-    "Redux / Context API",
-    "Axios / Fetch",
-    "CSS / SASS ",
-  ];
-
-  const serviceNow = [
-    "Glide API",
-    "HTML & CSS",
-    "Client-side Scripting",
-    "Server-side scripting",
-    "Flow Designer",
-    "Cataloguing",
-  ];
-
-  const devTools = [
-    "Chrome Dev Tools",
-    "Postman",
-    "Github",
-    "Prettier",
-    "ES6 Snippets",
-    "Gitlens",
+  const techIcons = [
+    { icon: faHtml5, label: "HTML" },
+    { icon: faCss3Alt, label: "CSS" },
+    { icon: faSquareJs, label: "Javascript" },
+    { icon: faReact, label: "React" },
+    { icon: faGithub, label: "GitHub" },
+    { icon: faGoogle, label: "Firebase" },
+    { icon: faServicestack, label: "ServiceNow" },
+    { icon: faMicrosoft, label: "VSCode" },
   ];
 
   return (
@@ -46,23 +39,27 @@ const AboutContent = () => {
       <div className="heading">
         <h1 data-aos="fade-up">Who am I?</h1>
         <p data-aos="fade-up">
-          I am a react front-end developer. I have 2 years of experience in Web
-          and Mobile Development
+          I have been in the software development industry for 3+ years now.
+          {<br />}
+          Listed below is the tech stack I have learned throughout the course of
+          my career.
         </p>
-        <Link to="/contact">
-          <button className="btn btn-about" data-aos="fade-up">
-            Contact
-          </button>
-        </Link>
       </div>
 
-      {/* About Cards */}
-      <div className="about-container">
-        <AboutCard title="• Tech Stack •" items={techStack} />
-        <AboutCard title="• ServiceNow Tools •" items={serviceNow} />
-        <AboutCard title="• Dev Tools and Extensions •" items={devTools} />
+      <div className="tech-icons-container" data-aos="fade-up">
+        {techIcons.map((tech, index) => (
+          <div key={index} className="tech-icon">
+            <FontAwesomeIcon icon={tech.icon} size="2x" />
+            <p>{tech.label}</p>
+          </div>
+        ))}
       </div>
 
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <div className="social-media-title" data-aos="fade-up">
         <h2>Check Out My YouTube Channel!</h2>
       </div>
