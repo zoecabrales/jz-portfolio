@@ -11,6 +11,7 @@ const ExpCardData = [
       "Employee Center Portal implementation",
       "ACLs & Roles",
       "Catalog Item Creation",
+      "Javascript",
     ],
   },
   {
@@ -23,6 +24,8 @@ const ExpCardData = [
       "Firebase Auth and Validations",
       "Firestore",
       "Redux",
+      "Javascript",
+      "Node Modules",
     ],
   },
   {
