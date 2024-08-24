@@ -73,25 +73,36 @@
     transform: scale(1.1); /* Slightly enlarge icon on hover */
     transition: transform 0.3s ease;
   }
+  .tech-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff; /* Initial color for the icons and labels */
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .tech-icon p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .tech-icon:hover {
+    transform: scale(1.1); /* Slightly increase the size of the icon */
+    color: #f6c453; /* Change color on hover, similar to your button color */
+  }
+  
+  .tech-icon:hover p {
+    color: #f6c453; /* Change the label color on hover */
+  }
+  
   .tech-icons-container {
     display: flex;
     justify-content: center;
     gap: 2rem; /* Adjust the gap as needed */
     margin: 2rem 0; /* Space around the icons */
     margin-bottom: 200px;
-  }
-  
-  .tech-icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: #fff; /* Change this to your preferred color */
-  }
-  
-  .tech-icon p {
-    margin-top: 0.5rem;
-    font-size: 1rem;
   }
   
   
