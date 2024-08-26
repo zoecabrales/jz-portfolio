@@ -3,10 +3,9 @@ import "./ExpCardStyles.css";
 import { useTheme } from "../../../context/ThemeContext"; // Import the useTheme hook
 
 const ExpCard = ({ company, project, role, duties }) => {
-  const { theme } = useTheme(); // Get the current theme
-  const [isHovered, setIsHovered] = useState(false); // State for hover effect
+  const { theme } = useTheme();
+  const [isHovered, setIsHovered] = useState(false);
 
-  // Handle mouse enter and leave events
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -29,6 +28,7 @@ const ExpCard = ({ company, project, role, duties }) => {
         </div>
       ) : (
         <div className="exp-card-duties">
+          <h2>Tasks & Tools</h2>
           {duties.map((duty, index) => (
             <p key={index}>{duty}</p>
           ))}

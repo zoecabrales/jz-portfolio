@@ -1,18 +1,27 @@
 .pricing {
     width: 100%;
     padding: 6rem 1rem;
-    /* background: linear-gradient(135deg, #000428, #004e92); */
 }
 
 .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts the number of columns based on the available space */
+    gap: 20px; /* Space between cards */
     max-width: 1140px;
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 40px;
+    justify-items: center; 
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+.card-container.hovered {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+
 .card {
+    width: 100%;
+    max-width: 300px; /* Optional: Limit the max width of the cards */
     border: 1px solid white;
     color: white;
     text-align: center;
@@ -25,7 +34,7 @@
 .card:hover {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-   transform: translateY(-5px); /* Elevate on hover */
+    transform: translateY(-5px); /* Elevate on hover */
 }
 
 .card h3 {
@@ -34,36 +43,15 @@
     color: white;
 }
 
-.card p {
-    padding: 10px 0;
-    color: white;
+.cert-image {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 10px;
 }
 
-.bar-line {
-    border-bottom: 1px solid white;
-    width: 30%;
-    margin: 1.5rem auto;
-    display: block;
-}
-
-.btc {
-    font-size: 3rem;
-    font-weight: 500;
-    padding: 1rem 0;
-}
-
-.btn-price {
-    border-radius: 50px;
-    display: block;
-    width: 80%;
-    margin: 2rem auto;
-}
-
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 900px) {
     .card-container {
-        max-width: 90%;
-        margin: auto;
-        row-gap: 35px;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
     }
 }

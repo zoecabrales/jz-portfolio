@@ -25,7 +25,7 @@ const HeroImg = () => {
             <img
               src={Avatar2}
               alt="profile"
-              style={{ borderRadius: "50% 0 50% 50%" }}
+              style={{ borderRadius: "50% 50% 50% 50%" }}
             />
           </div>
         </div>

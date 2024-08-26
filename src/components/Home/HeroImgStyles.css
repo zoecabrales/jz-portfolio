@@ -81,10 +81,10 @@
     opacity: 0.8;
 }
 
-.hero .avatar:hover{
+/* .hero .avatar:hover{
     transform:rotate(7deg);
     transition: ease-in-out 0.4s;
-}
+} */
 
 @media screen and (max-width:640px) {
     .hero .content h1{
