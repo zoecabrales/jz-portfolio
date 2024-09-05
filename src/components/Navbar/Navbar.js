@@ -42,11 +42,11 @@ const Navbar = () => {
             Work Experiences
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/contact" onClick={() => setClick(false)}>
             Contact
           </Link>
-        </li>
+        </li> */}
       </ul>
       <div className="hamburger" onClick={handleClick}>
         {click ? (

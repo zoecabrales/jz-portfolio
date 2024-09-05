@@ -18,9 +18,14 @@ const HeroImg = () => {
           <Link to="/project" className="btn">
             Projects
           </Link>
-          <Link to="/contact" className="btn btn-light">
-            Contact
-          </Link>
+          <a
+            href="https://drive.google.com/file/d/1sf0k4StPm2lKF3TPjx6-XOi3gnVNLtMy/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn"
+          >
+            My Resume
+          </a>
           <div className="avatar">
             <img
               src={Avatar2}

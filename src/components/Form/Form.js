@@ -1,6 +1,5 @@
 import "./FormStyles.css";
 import React from "react";
-// import RecentMostUpdatedResume from "./RecentMostUpdatedResume.pdf";
 
 const Form = () => {
   return (
