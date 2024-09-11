@@ -1,109 +1,166 @@
 .about {
-    width: 100%;
-    padding: 6rem 1rem;
-    background-color: black;
-  }
-  
-  .heading {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .social-media-title {
-    text-align: center;
-    margin-top: 4rem;
-  }
-  
-  .social-media-title h2 {
-    font-size: 2rem;
-    color: #eee;
-  }
-  
-  /* Container for the YouTube video */
-  .video-container {
-    display: flex;
-    justify-content: center;
-    margin: 5rem 0;
-  }
-  
-  /* Video iframe sizing */
+  width: 100%;
+  padding: 6rem 1rem;
+  background-color: black;
+}
+
+/* Heading styling */
+.heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Social Media Title */
+.social-media-title {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.social-media-title h2 {
+  font-size: 2rem;
+  color: #eee;
+}
+
+/* Container for the YouTube video */
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin: 5rem 0;
+}
+
+/* Video iframe sizing */
+.video-container iframe {
+  width: 960px;
+  height: 540px;
+  max-width: 100%;
+  max-height: calc(100vw * 9 / 16); /* Maintain 16:9 aspect ratio */
+}
+
+/* About Container for the Cards */
+.about-container {
+  max-width: 1140px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Space between icons */
+  margin: 2rem 0; /* Margin around the icon container */
+}
+
+.icon-item {
+  text-align: center;
+}
+
+.icon-item p {
+  margin-top: 0.5rem;
+  color: #eee;
+  font-size: 1rem;
+}
+
+.icon-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.icon-item:hover p {
+  color: #fff;
+}
+
+.icon-item:hover svg {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.tech-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.tech-icon p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.tech-icon:hover {
+  transform: scale(1.1);
+  color: #f6c453;
+}
+
+.tech-icon:hover p {
+  color: #f6c453;
+}
+
+.tech-icons-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  margin-bottom: 200px;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Smaller screens (tablets and large phones) */
+@media (max-width: 768px) {
   .video-container iframe {
-    width: 960px; /* Width similar to YouTube theater mode */
-    height: 540px; /* Height similar to YouTube theater mode */
-    max-width: 100%;
-    max-height: calc(100vw * 9 / 16); /* Maintain 16:9 aspect ratio */
+      width: 100%;
+      height: auto;
   }
-  
-  /* About Container for the Cards */
-  .about-container {
-    max-width: 1140px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 20px;
-  }
-  .icons-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem; /* Space between icons */
-    margin: 2rem 0; /* Margin around the icon container */
-  }
-  
-  .icon-item {
-    text-align: center;
-  }
-  
-  .icon-item p {
-    margin-top: 0.5rem;
-    color: #eee; /* Title color */
-    font-size: 1rem;
-  }
-  
-  .icon-item a {
-    text-decoration: none; /* Remove underline from links */
-    color: inherit; /* Inherit color from parent */
-  }
-  
-  .icon-item:hover p {
-    color: #fff; /* Change color on hover */
-  }
-  
-  .icon-item:hover svg {
-    transform: scale(1.1); /* Slightly enlarge icon on hover */
-    transition: transform 0.3s ease;
-  }
-  .tech-icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: #fff; /* Initial color for the icons and labels */
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-  
-  .tech-icon p {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-  
-  .tech-icon:hover {
-    transform: scale(1.1); /* Slightly increase the size of the icon */
-    color: #f6c453; /* Change color on hover, similar to your button color */
-  }
-  
-  .tech-icon:hover p {
-    color: #f6c453; /* Change the label color on hover */
-  }
-  
+
   .tech-icons-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem; /* Adjust the gap as needed */
-    margin: 2rem 0; /* Space around the icons */
-    margin-bottom: 200px;
+      flex-wrap: wrap;
+      gap: 1rem;
   }
-  
-  
-  
+
+  .heading p {
+      font-size: 1.1rem;
+  }
+
+  .social-media-title h2 {
+      font-size: 1.5rem;
+  }
+}
+
+/* Extra small screens (phones) */
+@media (max-width: 480px) {
+  .about {
+      padding: 4rem 1rem;
+  }
+
+  .heading h1 {
+      font-size: 1.8rem;
+  }
+
+  .heading p {
+      font-size: 1rem;
+  }
+
+  .social-media-title h2 {
+      font-size: 1.2rem;
+  }
+
+  .tech-icons-container {
+      gap: 0.5rem;
+      flex-wrap: wrap;
+  }
+
+  .tech-icon p {
+      font-size: 0.9rem;
+  }
+
+  .video-container iframe {
+      width: 100%;
+      height: auto;
+  }
+}
