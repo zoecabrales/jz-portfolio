@@ -1,5 +1,4 @@
-import React from "react";
-import YouTube from "react-youtube";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHtml5,
@@ -14,24 +13,57 @@ import {
 import "./AboutContentStyles.css";
 
 const AboutContent = () => {
-  const videoOptions = {
-    height: "540", // YouTube theater mode height
-    width: "960", // YouTube theater mode width
-    playerVars: {
-      autoplay: 0,
-    },
-  };
-
   const techIcons = [
-    { icon: faHtml5, label: "HTML" },
-    { icon: faCss3Alt, label: "CSS" },
-    { icon: faSquareJs, label: "JavaScript" },
-    { icon: faReact, label: "React" },
-    { icon: faGithub, label: "GitHub" },
-    { icon: faGoogle, label: "Firebase" },
-    { icon: faServicestack, label: "ServiceNow" },
-    { icon: faMicrosoft, label: "VSCode" },
+    {
+      icon: faHtml5,
+      label: "HTML",
+      description:
+        "The latest HTML standard defines the structure and presentation of web pages.",
+    },
+    {
+      icon: faCss3Alt,
+      label: "CSS",
+      description:
+        "CSS3 styles web pages, including layout, colors, and fonts.",
+    },
+    {
+      icon: faSquareJs,
+      label: "JavaScript",
+      description: "JavaScript enables interactive web experiences.",
+    },
+    {
+      icon: faReact,
+      label: "React",
+      description:
+        "React is a JavaScript library for building user interfaces.",
+    },
+    {
+      icon: faGithub,
+      label: "GitHub",
+      description:
+        "GitHub is a platform for version control and collaboration using Git.",
+    },
+    {
+      icon: faGoogle,
+      label: "Firebase",
+      description:
+        "Firebase is Google's platform for building mobile and web apps.",
+    },
+    {
+      icon: faServicestack,
+      label: "ServiceNow",
+      description:
+        "ServiceNow is a cloud platform for managing digital workflows.",
+    },
+    {
+      icon: faMicrosoft,
+      label: "VSCode",
+      description:
+        "VSCode is a lightweight code editor developed by Microsoft.",
+    },
   ];
+
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
     <div className="about">
@@ -47,19 +79,19 @@ const AboutContent = () => {
 
       <div className="tech-icons-container" data-aos="fade-up">
         {techIcons.map((tech, index) => (
-          <div key={index} className="tech-icon">
+          <div
+            key={index}
+            className="tech-icon"
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
             <FontAwesomeIcon icon={tech.icon} size="2x" />
             <p>{tech.label}</p>
+            {hoveredIndex === index && (
+              <div className="description-box">{tech.description}</div>
+            )}
           </div>
         ))}
-      </div>
-
-      <div className="social-media-title" data-aos="fade-up">
-        <h2>Check Out My YouTube Channel!</h2>
-      </div>
-
-      <div className="video-container" data-aos="fade-up">
-        <YouTube videoId="QSURtD1gro8" opts={videoOptions} />
       </div>
     </div>
   );
