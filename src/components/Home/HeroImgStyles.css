@@ -44,7 +44,7 @@
 .hero .content h1{
     position: relative;
     top: 90px;
-    left: 200px;
+    left: 203px;
     justify-content: space-between;
     font-size: 4rem;
     padding: 0.6rem 0 1.5rem;
@@ -54,7 +54,7 @@
 .hero .content p{
     position: relative;
     top: 80px;
-    left: 120px;
+    left: 10px;
     justify-content: space-between;
     font-size: 1.4rem;
     font-weight: 200;
@@ -64,7 +64,7 @@
 
 .content .btn{
     position: relative;
-    left: 95px;
+    left: 25px;
     top: 100px;
     margin: 1rem 0.2rem;
     border-radius: 30px;
@@ -102,6 +102,7 @@
     .content .btn{
         left: 0;
         top: 0;
+        display: block;
     }
     
     .hero .avatar{
