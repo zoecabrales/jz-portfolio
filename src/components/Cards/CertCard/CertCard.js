@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./CertCardStyles.css";
-import TSCert from "../../../assets/TScert.jpg"; // Adjust the path according to your folder structure
+// import TSCert from "../../../assets/TScert.jpg";
 
 const CertCard = ({ heading }) => {
   const [hoveredCert, setHoveredCert] = useState(null);
@@ -44,13 +44,6 @@ const CertCard = ({ heading }) => {
             >
               Understanding TypeScript
             </a>
-            {hoveredCert === "typescript" && (
-              <img
-                src={TSCert}
-                alt="Understanding TypeScript Certificate"
-                className="cert-image"
-              />
-            )}
             <br />
           </div>
 

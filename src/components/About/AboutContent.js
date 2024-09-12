@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import YouTube from "react-youtube"; // Import YouTube component
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHtml5,
@@ -65,6 +66,14 @@ const AboutContent = () => {
 
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
+  const videoOptions = {
+    height: "640", // Video height
+    width: "640", // Video width
+    playerVars: {
+      autoplay: 0, // Disable autoplay
+    },
+  };
+
   return (
     <div className="about">
       <div className="heading">
@@ -77,6 +86,7 @@ const AboutContent = () => {
         </p>
       </div>
 
+      {/* Tech Icons Section */}
       <div className="tech-icons-container" data-aos="fade-up">
         {techIcons.map((tech, index) => (
           <div
@@ -92,6 +102,14 @@ const AboutContent = () => {
             )}
           </div>
         ))}
+      </div>
+
+      {/* YouTube Video Section */}
+      <div className="video-container" data-aos="fade-up">
+        <div>
+          <h2>Check Out My YouTube Channel!</h2>
+        </div>
+        <YouTube videoId="QSURtD1gro8" opts={videoOptions} />
       </div>
     </div>
   );

@@ -102,20 +102,25 @@
   color: #f6c453;
 }
 
-/* Description Box Styling */
 .description-box {
   position: absolute;
-  bottom: -80px; /* Adjusts the position below the icon */
-  background-color: #333;
-  color: #fff;
+  bottom: -80px;
+  background-color: rgba(0, 0, 0, 0.6); 
+  color: #f6c453;
   padding: 0.5rem;
   border-radius: 8px;
-  width: 100px;
+  width: 120px; 
   text-align: center;
   font-size: 0.8rem;
-  z-index: 15;
-  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); */
+  z-index: 10; 
+  opacity: 0; 
+  transition: opacity 0.3s ease-in-out; 
 }
+
+.tech-icon:hover .description-box {
+  opacity: 1; /* Make visible when hovered */
+}
+
 
 /* Tech icons container */
 .tech-icons-container {
@@ -124,6 +129,19 @@
   gap: 2rem;
   margin: 2rem 0;
 }
+
+.video-container {
+  display: block;
+  text-align: center;
+  margin-top: 10rem;
+}
+
+.video-container h2 {
+  color: #eee;
+  font-size: 1.6rem;
+  margin-bottom: .8rem; 
+}
+
 
 @media (max-width: 768px) {
   .video-container iframe {
