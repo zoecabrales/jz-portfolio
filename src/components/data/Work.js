@@ -1,10 +1,23 @@
 import React from "react";
+import WorkCard from "../Cards/WorkCard/WorkCard";
+import WorkCardData from "../../components/data/WorkCardData";
 
 const Work = () => {
   return (
     <div className="work-container">
       <h1 className="project-heading">Projects</h1>
-      <h2>Will be posting soon some of my personal projects...</h2>
+      <div className="project-container">
+        {WorkCardData.map((item, index) => (
+          <WorkCard
+            key={index}
+            imgsrc={item.imgsrc}
+            title={item.title}
+            text={item.text}
+            view={item.view}
+            tools={item.tools} // Pass tools as a prop
+          />
+        ))}
+      </div>
     </div>
   );
 };

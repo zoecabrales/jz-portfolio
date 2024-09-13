@@ -1,8 +1,17 @@
-import React from "react";
-
+import React, { useState } from "react";
 import "./WorkCardStyles.css";
 
-const WorkCard = ({ imgsrc, title, text, view }) => {
+const WorkCard = ({ imgsrc, title, text, view, tools }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <div
       className="project-card"
@@ -13,21 +22,13 @@ const WorkCard = ({ imgsrc, title, text, view }) => {
       <img src={imgsrc} alt="pro" />
       <h2 className="project-title">{title}</h2>
       <div className="project-details">
-        <p>{text}</p>
+        <p onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          {isHovered ? tools : text}
+        </p>
         <div className="project-btns">
-          <a
-            href={view}
-            className="btn"
-            data-aos="fade-right"
-            data-aos-offset="200"
-            data-aos-delay="150"
-            data-aos-once="true"
-          >
+          <a href={view} className="btn">
             View
           </a>
-          {/* <NavLink to={source} className="btn">
-            Source
-          </NavLink> */}
         </div>
       </div>
     </div>

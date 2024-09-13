@@ -10,20 +10,18 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 40px;
     padding-bottom: 5rem;
+    border-radius: 20px;
 }
 
 .project-card{
     background:#383434;
     padding:1.2rem 1rem;
-}
-
-.project-card:hover{
-    border-radius: 30px;
-    transition: 0.3s;
+    border-radius: 20px;
 }
 
 .project-card img  {
     width: 100%;
+    border-radius: 20px;
 }
 
 .project-title{
@@ -31,11 +29,20 @@
     padding: 1rem 0;
 }
 
-.project-details p{
+.project-details p {
     padding-bottom: 1rem;
-    font-size: 1.1rem;
+    font-size: .9rem;
     text-align: justify;
+    color: white;
+    transition: color 0.3s ease; /* Only animate color change */
 }
+
+.project-details p:hover {
+    color: #f0f0f0; /* Only change the text color on hover */
+    background: none; /* Ensure there's no background change */
+    border: none; /* Ensure there's no border or box-shadow */
+}
+
 
 .project-btns{
     display: flex;
@@ -45,8 +52,8 @@
 }
 
 .project-btns .btn{
-    padding: 0.8rem 6rem;
-    border-radius: 8px;
+    padding: 0.7rem 2.8rem;
+    border-radius: 20px;
 }
 
 @media screen and (max-width: 740px) {

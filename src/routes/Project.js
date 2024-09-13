@@ -13,7 +13,7 @@ const Project = () => {
         heading="PROJECTS"
         text="I will be posting some of my personal projects soon..."
       />
-      {/* <Work /> */}
+      <Work />
       <Footer />
     </div>
   );
