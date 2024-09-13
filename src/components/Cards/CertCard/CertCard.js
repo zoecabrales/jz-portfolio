@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./CertCardStyles.css";
-// import TSCert from "../../../assets/TScert.jpg";
 
 const CertCard = ({ heading }) => {
   const [hoveredCert, setHoveredCert] = useState(null);
@@ -72,20 +71,6 @@ const CertCard = ({ heading }) => {
               style={{ fontSize: "1.5rem" }}
             >
               React Fullstack (Redux, Hooks, GraphQL)
-            </a>
-          </div>
-
-          <div
-            className="card"
-            onMouseEnter={() => setHoveredCert("")}
-            onMouseLeave={() => setHoveredCert(null)}
-          >
-            <h3>- Udemy -</h3>
-            <a
-              href="https://www.udemy.com/certificate/UC-b613aec9-c4e7-4daa-a85b-41d9692dcffc/"
-              style={{ fontSize: "1.5rem" }}
-            >
-              React Native FullStack (NodeJs & ExpressJs)
             </a>
           </div>
 
