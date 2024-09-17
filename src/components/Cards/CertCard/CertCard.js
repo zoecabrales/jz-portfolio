@@ -4,6 +4,50 @@ import "./CertCardStyles.css";
 const CertCard = ({ heading }) => {
   const [hoveredCert, setHoveredCert] = useState(null);
 
+  const certifications = [
+    {
+      id: "typescript",
+      title: "Understanding TypeScript",
+      platform: "Udemy",
+      instructor: "Maximilian Schwarzmuller",
+      dateCompleted: "04-23-2022",
+      videoLength: "15 hours",
+      link: "https://www.udemy.com/certificate/UC-175e280b-6616-408e-aaf6-16be932c70fa/",
+    },
+    {
+      id: "es6",
+      title: "ES6 JavaScript",
+      platform: "Udemy",
+      instructor: "Stephen Grider",
+      dateCompleted: "04-22-2022",
+      videoLength: "6.5 hours",
+      link: "https://www.udemy.com/certificate/UC-752b2f48-d7e1-4b43-af37-33f50c070eee/",
+    },
+    {
+      id: "react",
+      title: "React Fullstack (Redux, Hooks, GraphQL)",
+      platform: "Udemy",
+      instructor: "Andrei Neagoie, Yihua Zhang, Zero To Mastery",
+      dateCompleted: "9-22-2022",
+      videoLength: "39 hours",
+      link: "https://www.udemy.com/certificate/UC-675b0d3e-6dda-40aa-8a63-4a87ae084cb0/ ",
+    },
+    {
+      id: "servicenow",
+      title: "ServiceNow Developer Course",
+      platform: "Udemy",
+      instructor: "Mark Miller, Singa Code",
+      dateCompleted: "12-23-2022",
+      videoLength: "8.5 hours",
+      link: "https://www.udemy.com/certificate/UC-d18ffd27-832f-41d7-9efe-4a6506140604/",
+    },
+  ];
+
+  // Get the current hovered certification details
+  const hoveredCertDetails = certifications.find(
+    (cert) => cert.id === hoveredCert
+  );
+
   return (
     <div className="heading">
       <h1>My Digital Certifications</h1>
@@ -31,62 +75,32 @@ const CertCard = ({ heading }) => {
         data-aos-once="true"
       >
         <div className="card-container">
-          <div
-            className="card"
-            onMouseEnter={() => setHoveredCert("typescript")}
-            onMouseLeave={() => setHoveredCert(null)}
-          >
-            <h3>- Udemy -</h3>
-            <a
-              href="https://www.udemy.com/certificate/UC-175e280b-6616-408e-aaf6-16be932c70fa/"
-              style={{ fontSize: "1.5rem" }}
+          {certifications.map((cert) => (
+            <div
+              key={cert.id}
+              className="card"
+              onMouseEnter={() => setHoveredCert(cert.id)}
+              onMouseLeave={() => setHoveredCert(null)}
             >
-              Understanding TypeScript
-            </a>
-            <br />
-          </div>
-
-          <div
-            className="card"
-            onMouseEnter={() => setHoveredCert("")}
-            onMouseLeave={() => setHoveredCert(null)}
-          >
-            <h3>- Udemy -</h3>
-            <a
-              href="https://www.udemy.com/certificate/UC-752b2f48-d7e1-4b43-af37-33f50c070eee/"
-              style={{ fontSize: "1.5rem" }}
-            >
-              ES6 Javascript
-            </a>
-          </div>
-
-          <div
-            className="card"
-            onMouseEnter={() => setHoveredCert("")}
-            onMouseLeave={() => setHoveredCert(null)}
-          >
-            <h3>- Udemy -</h3>
-            <a
-              href="https://www.udemy.com/certificate/UC-675b0d3e-6dda-40aa-8a63-4a87ae084cb0/"
-              style={{ fontSize: "1.5rem" }}
-            >
-              React Fullstack (Redux, Hooks, GraphQL)
-            </a>
-          </div>
-
-          <div
-            className="card"
-            onMouseEnter={() => setHoveredCert("")}
-            onMouseLeave={() => setHoveredCert(null)}
-          >
-            <h3>- Udemy -</h3>
-            <a
-              href="https://www.udemy.com/certificate/UC-d18ffd27-832f-41d7-9efe-4a6506140604/"
-              style={{ fontSize: "1.5rem" }}
-            >
-              ServiceNow Developer Course
-            </a>
-          </div>
+              <h3>- {cert.platform} -</h3>
+              <a
+                href={cert.link}
+                style={{ fontSize: "1.5rem" }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {cert.title}
+              </a>
+              <br />
+              {hoveredCert === cert.id && (
+                <div className="hover-info">
+                  <p>Instructor: {cert.instructor}</p>
+                  <p>Date: {cert.dateCompleted}</p>
+                  <p>Video Length: {cert.videoLength}</p>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </div>
