@@ -13,45 +13,56 @@
     border-radius: 20px;
 }
 
-.project-card{
-    background:#383434;
-    padding:1.2rem 1rem;
+.project-card {
+    background: #383434;
+    padding: 1.2rem 1rem;
     border-radius: 20px;
+    height: 500px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
 }
 
-.project-card img  {
+.project-card img {
     width: 100%;
     border-radius: 20px;
+    max-height: 150px; 
+    object-fit: cover; 
 }
 
-.project-title{
+.project-title {
     color: #fff;
     padding: 1rem 0;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.project-details {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .project-details p {
     padding-bottom: 1rem;
-    font-size: .9rem;
+    font-size: 0.9rem;
     text-align: justify;
     color: white;
-    transition: color 0.3s ease; /* Only animate color change */
+    transition: color 0.3s ease;
 }
 
-.project-details p:hover {
-    color: #f0f0f0; /* Only change the text color on hover */
-    background: none; /* Ensure there's no background change */
-    border: none; /* Ensure there's no border or box-shadow */
-}
-
-
-.project-btns{
+.project-btns {
     display: flex;
     justify-content: center;
     padding: 0.5rem 0;
-    margin: auto 10px;
+    gap: 10px;
+    margin-top: auto;
 }
 
-.project-btns .btn{
+.project-btns .btn {
+    padding: 0.7rem 2.8rem;
+    border-radius: 20px;
     padding: 0.7rem 2.8rem;
     border-radius: 20px;
 }
@@ -62,5 +73,5 @@
         margin: auto;
         row-gap: 35px;
         grid-template-columns: 1fr;
-    }   
+    }
 }

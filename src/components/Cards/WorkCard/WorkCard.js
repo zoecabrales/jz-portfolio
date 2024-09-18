@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./WorkCardStyles.css";
 
-const WorkCard = ({ imgsrc, title, text, view, tools }) => {
+const WorkCard = ({ imgsrc, title, text, view, tools, source }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -26,7 +26,21 @@ const WorkCard = ({ imgsrc, title, text, view, tools }) => {
           {isHovered ? tools : text}
         </p>
         <div className="project-btns">
-          <a href={view} className="btn">
+          <a
+            href={source}
+            className="btn"
+            style={{ marginRight: "10px" }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Code
+          </a>
+          <a
+            href={view}
+            className="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             View
           </a>
         </div>

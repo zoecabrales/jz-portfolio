@@ -14,7 +14,9 @@ const Work = () => {
             title={item.title}
             text={item.text}
             view={item.view}
-            tools={item.tools} // Pass tools as a prop
+            source={item.source}
+            tools={item.tools}
+            dep={item.dep}
           />
         ))}
       </div>
