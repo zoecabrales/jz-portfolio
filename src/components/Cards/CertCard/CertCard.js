@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useTheme } from "../../../context/ThemeContext";
 import "./CertCardStyles.css";
 
 const CertCard = ({ heading }) => {
   const [hoveredCert, setHoveredCert] = useState(null);
+  const { theme } = useTheme();
 
   const certifications = [
     {
@@ -49,10 +51,11 @@ const CertCard = ({ heading }) => {
   );
 
   return (
-    <div className="heading">
-      <h1>My Digital Certifications</h1>
-      <h2>{heading}</h2>
+    <div className={`heading ${theme}`}>
+      <h1 className={theme}>My Digital Certifications</h1>
+      <h2 className={theme}>{heading}</h2>
       <h4
+        className={theme}
         style={{ marginTop: "50px" }}
         data-aos="fade-up"
         data-aos-offset="200"
@@ -65,7 +68,7 @@ const CertCard = ({ heading }) => {
         Hover and click the list.
       </h4>
       <div
-        className="pricing"
+        className={`pricing ${theme}`}
         data-aos="fade-up"
         data-aos-offset="200"
         data-aos-delay="50"
@@ -78,7 +81,7 @@ const CertCard = ({ heading }) => {
           {certifications.map((cert) => (
             <div
               key={cert.id}
-              className="card"
+              className={`card ${theme}`}
               onMouseEnter={() => setHoveredCert(cert.id)}
               onMouseLeave={() => setHoveredCert(null)}
             >

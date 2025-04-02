@@ -1,10 +1,18 @@
-.footer{
+.footer {
     width: 100%;
     padding: 6rem 0;
+    transition: background-color 0.3s ease;
+}
+
+.footer.light {
+    background-color: rgba(245, 245, 245, 0.9);
+}
+
+.footer.dark {
     background-color: rgba(19, 19, 19, 0.8);
 }
 
-.footer-container{
+.footer-container {
     max-width: 1140px;
     margin: auto;
     display: grid;
@@ -20,16 +28,16 @@
     padding: 0.5rem;
 }
 
-.location{
+.location {
     display: flex;
     margin-bottom: 0.8rem;
 }
 
-.location p{
+.location p {
     line-height: 30px;
 }
 
-.right{
+.right {
     height: 100%;
     max-width: 100%;
     display: flex;
@@ -37,31 +45,45 @@
     padding: 1rem;
 }
 
-.social{
+.social {
     display: flex;
 }
 
-.social-fb{
+.social-fb {
     margin-top: 1rem;
     transition: 0.2s all ease-in-out;
 }
 
-.social-fb:hover{
+.social-fb:hover {
     cursor: pointer;
-    transform:scale(1.5);
+    transform: scale(1.5);
 }
 
-h4{
+.footer.light h4,
+.footer.light p,
+.footer.light .social-fb svg {
+    color: #333;
+}
+
+.footer.dark h4,
+.footer.dark p,
+.footer.dark .social-fb svg {
+    color: #fff;
+}
+
+h4 {
     font-size: 1.2rem;
     padding-bottom: 0.7rem;
+    transition: color 0.3s ease;
 }
 
-p{
+p {
     font-size: 1.2rem;
+    transition: color 0.3s ease;
 }
 
 @media screen and (max-width:640px) {
-    .footer-container{
+    .footer-container {
         grid-template-columns: 1fr;
     }
 }
