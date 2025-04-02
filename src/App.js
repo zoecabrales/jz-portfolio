@@ -1,4 +1,6 @@
 import React from "react";
+import { Route, Routes } from "react-router";
+import { ThemeProvider } from "./context/ThemeContext";
 
 import Home from "./routes/Home";
 import About from "./routes/About";
@@ -8,11 +10,10 @@ import WorkExp from "./routes/WorkExp";
 import Certs from "./routes/Certs";
 
 import "./index.css";
-import { Route, Routes } from "react-router";
 
 const App = () => {
   return (
-    <>
+    <ThemeProvider>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -21,7 +22,7 @@ const App = () => {
         <Route path="/work" element={<WorkExp />} />
         <Route path="/certifications" element={<Certs />} />
       </Routes>
-    </>
+    </ThemeProvider>
   );
 };
 

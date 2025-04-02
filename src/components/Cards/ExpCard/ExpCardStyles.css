@@ -28,13 +28,15 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increased shadow for more effect */
+
   transition: background-color 0.3s, border-radius 0.3s, transform 0.3s;
 }
 
 .exp-card:hover {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
+  opacity: 2; /* Smooth fade out */
   transform: translateY(-5px); /* Elevate on hover */
 }
 
@@ -49,22 +51,30 @@
   font-size: 1.3rem;
   padding-bottom: 0.5rem;
   color: #ccc;
+  opacity: 1.5;
 }
 
 .exp-card p {
   padding: 0.5rem 0;
   color: #ddd;
   line-height: 1.6;
+  transition: opacity 2s ease, transform 2s ease;
+  
 }
 
 .duties p {
   margin-left: 1rem;
   text-indent: -1rem;
+  transform: translateY(0); /* Reset position on hover */
+  opacity: 1;
+  transition: opacity 2s ease, transform 2s ease;
+
 }
 .exp-card.dark {
   background-color: #222;
   color: white;
   border: 1px solid white;
+  
 }
 
 .exp-card.light {

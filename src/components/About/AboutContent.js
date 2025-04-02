@@ -111,6 +111,21 @@ const AboutContent = () => {
         </div>
         <YouTube videoId="QSURtD1gro8" opts={videoOptions} />
       </div>
+
+      {/* Figma UI Design Section */}
+      <div className="figma-container" data-aos="fade-up">
+        <div>
+          <h2>My Figma UI Design</h2>
+          <h3>This is only for my side projects</h3>
+        </div>
+        <div className="figma-image">
+          <img 
+            src={require("../../assets/figma-ui.png")} 
+            alt="Figma UI Design" 
+            className="rounded-image"
+          />
+        </div>
+      </div>
     </div>
   );
 };
