@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import YouTube from "react-youtube"; // Import YouTube component
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHtml5,
@@ -66,14 +65,6 @@ const AboutContent = () => {
 
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  const videoOptions = {
-    height: "640", // Video height
-    width: "640", // Video width
-    playerVars: {
-      autoplay: 0, // Disable autoplay
-    },
-  };
-
   return (
     <div className="about">
       <div className="heading">
@@ -102,29 +93,6 @@ const AboutContent = () => {
             )}
           </div>
         ))}
-      </div>
-
-      {/* YouTube Video Section */}
-      <div className="video-container" data-aos="fade-up">
-        <div>
-          <h2>Check Out My YouTube Channel!</h2>
-        </div>
-        <YouTube videoId="QSURtD1gro8" opts={videoOptions} />
-      </div>
-
-      {/* Figma UI Design Section */}
-      <div className="figma-container" data-aos="fade-up">
-        <div>
-          <h2>My Figma UI Design</h2>
-          <h3>This is only for my side projects</h3>
-        </div>
-        <div className="figma-image">
-          <img 
-            src={require("../../assets/figma-ui.png")} 
-            alt="Figma UI Design" 
-            className="rounded-image"
-          />
-        </div>
       </div>
     </div>
   );

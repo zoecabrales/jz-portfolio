@@ -1,15 +1,15 @@
 .exp {
   width: 100%;
   padding: 6rem 1rem;
-  /* background: linear-gradient(135deg, #000428, #000428 ); */
   color: white;
+  background-color: black;
 }
 
 .exp-heading {
   text-align: center;
   color: #fff;
   margin-bottom: 3rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -24,71 +24,68 @@
 }
 
 .exp-card {
-  background: rgba(255, 255, 255, 0.1); /* Transparent white */
+  background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increased shadow for more effect */
-
-  transition: background-color 0.3s, border-radius 0.3s, transform 0.3s;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  min-height: 250px;
 }
 
 .exp-card:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  opacity: 2; /* Smooth fade out */
-  transform: translateY(-5px); /* Elevate on hover */
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
 }
 
 .exp-card h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   padding-bottom: 1rem;
   color: #fff;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
 }
 
 .exp-card h4 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   padding-bottom: 0.5rem;
-  color: #ccc;
-  opacity: 1.5;
+  color: #ddd;
 }
 
 .exp-card p {
   padding: 0.5rem 0;
   color: #ddd;
   line-height: 1.6;
-  transition: opacity 2s ease, transform 2s ease;
-  
+  font-size: 1rem;
 }
 
-.duties p {
+.exp-card-duties h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.exp-card-duties p {
   margin-left: 1rem;
   text-indent: -1rem;
-  transform: translateY(0); /* Reset position on hover */
-  opacity: 1;
-  transition: opacity 2s ease, transform 2s ease;
-
-}
-.exp-card.dark {
-  background-color: #222;
-  color: white;
-  border: 1px solid white;
-  
+  color: #ddd;
 }
 
-.exp-card.light {
-  background-color: #f9f9f9;
-  color: black;
-  border: 1px solid #ccc;
+@media screen and (max-width: 1200px) {
+  .exp-card-container {
+    padding: 0 2rem;
+  }
 }
 
+@media screen and (max-width: 940px) {
+  .exp-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 @media screen and (max-width: 740px) {
   .exp-card-container {
     max-width: 90%;
     margin: auto;
     grid-template-columns: 1fr;
-    row-gap: 35px;
   }
 }

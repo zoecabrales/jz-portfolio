@@ -1,0 +1,53 @@
+.figma-section {
+    width: 100%;
+    padding: 6rem 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.figma-container {
+    max-width: 1140px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.figma-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.figma-container h3 {
+    font-size: 1.5rem;
+    color: #ddd;
+    margin-bottom: 2rem;
+}
+
+.figma-image {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.rounded-image {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 740px) {
+    .figma-container {
+        padding: 0 1rem;
+    }
+
+    .figma-container h2 {
+        font-size: 2rem;
+    }
+
+    .figma-container h3 {
+        font-size: 1.2rem;
+    }
+}

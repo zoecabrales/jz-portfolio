@@ -13,6 +13,8 @@
     padding: 4rem 0 2rem 0;
     color: white;
     font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .project-container {
@@ -21,33 +23,43 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 40px;
+    row-gap: 40px;
     padding-bottom: 5rem;
-    border-radius: 20px;
 }
 
+/* Unified Card Styles */
 .project-card {
-    background: #383434;
-    padding: 1.2rem 1rem;
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .image-container {
     position: relative;
     width: 100%;
-    height: 150px;
+    height: 200px;
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .project-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 12px;
     transition: transform 0.3s ease;
 }
 
@@ -78,7 +90,10 @@
     color: #fff;
     padding: 1rem 0;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
 }
 
 .project-details {
@@ -89,41 +104,67 @@
 }
 
 .project-details p {
-    padding-bottom: 1rem;
-    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    line-height: 1.6;
     text-align: justify;
-    color: white;
+    color: #ddd;
     transition: color 0.3s ease;
 }
 
 .project-btns {
     display: flex;
     justify-content: center;
-    padding: 0.5rem 0;
-    gap: 10px;
+    padding: 1rem 0;
+    gap: 15px;
     margin-top: auto;
 }
 
 .project-btns .btn {
-    padding: 0.7rem 2.8rem;
-    border-radius: 20px;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
     background: transparent;
     border: 1px solid white;
     color: white;
+    font-size: 1rem;
+    font-weight: 500;
     text-decoration: none;
     transition: all 0.3s ease;
+    min-width: 120px;
+    text-align: center;
 }
 
 .project-btns .btn:hover {
     background: white;
-    color: #383434;
+    color: black;
+    transform: translateY(-2px);
+}
+
+@media screen and (max-width: 1200px) {
+    .project-container {
+        padding: 0 2rem;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .project-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media screen and (max-width: 740px) {
     .project-container {
         max-width: 90%;
         margin: auto;
-        row-gap: 35px;
         grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        height: auto;
+        min-height: 500px;
+    }
+
+    .image-container {
+        height: 180px;
     }
 }

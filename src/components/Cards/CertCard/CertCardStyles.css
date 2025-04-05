@@ -1,83 +1,81 @@
 .pricing {
     width: 100%;
     padding: 6rem 1rem;
+    background-color: black;
 }
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts the number of columns based on the available space */
-    gap: 20px; /* Space between cards */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
     max-width: 1140px;
     margin: auto;
-    justify-items: center; 
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    padding: 0 1rem;
 }
 
-.card-container.hovered {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
-  
-
-  .card {
-    width: 100%;
-    max-width: 300px; /* Optional: Limit the max width of the cards */
-    border: 1px solid white;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.7);
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1.5rem;
     border-radius: 15px;
-    transition: background-color 0.3s, border-radius 0.3s, transform 0.3s;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    min-height: 200px;
 }
 
 .card:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    transform: translateY(-5px); /* Elevate on hover */
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
 }
-
-.hover-info p{
-    color: white;
-    border-radius: 10px;
-    margin-top: 1.5rem;
-    transition: opacity 0.3s ease-in-out;
-    font-size: 0.9rem; /* Make font size smaller */
-    line-height: 1.4;
-    color: white;
-    text-align: left;
-    padding-top: 10px;
-}
-
-.hover-info p {
-    margin: 0.3rem 0;
-}
-
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts the number of columns based on the available space */
-    gap: 20px; /* Space between cards */
-    max-width: 1140px;
-    margin: auto;
-    justify-items: center;
-}
-
 
 .card h3 {
     font-size: 1.4rem;
     padding: 1rem;
     color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
 }
 
-.cert-image {
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    border-radius: 10px;
+.card a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-@media screen and (max-width: 900px) {
+.card a:hover {
+    color: white;
+}
+
+.hover-info {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hover-info p {
+    color: #ddd;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+    text-align: left;
+}
+
+@media screen and (max-width: 1200px) {
     .card-container {
-        grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
+        padding: 0 2rem;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .card-container {
+        grid-template-columns: 1fr;
+        max-width: 90%;
+        margin: auto;
     }
 }
