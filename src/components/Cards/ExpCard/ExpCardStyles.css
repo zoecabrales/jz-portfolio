@@ -1,32 +1,17 @@
 .exp {
   width: 100%;
   padding: 6rem 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.exp.light {
-  background-color: #f5f5f5;
-}
-
-.exp.dark {
-  background-color: black;
+  /* background: linear-gradient(135deg, #000428, #000428 ); */
+  color: white;
 }
 
 .exp-heading {
   text-align: center;
+  color: #fff;
   margin-bottom: 3rem;
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  transition: color 0.3s ease;
-}
-
-.exp-heading.light {
-  color: #333;
-}
-
-.exp-heading.dark {
-  color: #fff;
 }
 
 .exp-card-container {
@@ -39,88 +24,65 @@
 }
 
 .exp-card {
+  background: rgba(255, 255, 255, 0.1); /* Transparent white */
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 2rem;
   border-radius: 15px;
-  transition: all 0.3s ease;
-}
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increased shadow for more effect */
 
-.exp-card.light {
-  background: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.exp-card.dark {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, border-radius 0.3s, transform 0.3s;
 }
 
 .exp-card:hover {
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
-  transform: translateY(-5px);
-}
-
-.exp-card.light:hover {
-  background: rgba(0, 0, 0, 0.02);
-}
-
-.exp-card.dark:hover {
-  background: rgba(255, 255, 255, 0.15);
+  opacity: 2; /* Smooth fade out */
+  transform: translateY(-5px); /* Elevate on hover */
 }
 
 .exp-card h2 {
   font-size: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid;
-  transition: all 0.3s ease;
-}
-
-.exp-card.light h2 {
-  color: #333;
-  border-bottom-color: #ddd;
-}
-
-.exp-card.dark h2 {
   color: #fff;
-  border-bottom-color: #fff;
+  border-bottom: 2px solid #fff;
 }
 
 .exp-card h4 {
   font-size: 1.3rem;
   padding-bottom: 0.5rem;
-  transition: color 0.3s ease;
-}
-
-.exp-card.light h4 {
-  color: #666;
-}
-
-.exp-card.dark h4 {
   color: #ccc;
+  opacity: 1.5;
 }
 
 .exp-card p {
   padding: 0.5rem 0;
-  line-height: 1.6;
-  transition: all 0.3s ease;
-}
-
-.exp-card.light p {
-  color: #444;
-}
-
-.exp-card.dark p {
   color: #ddd;
+  line-height: 1.6;
+  transition: opacity 2s ease, transform 2s ease;
+  
 }
 
 .duties p {
   margin-left: 1rem;
   text-indent: -1rem;
-  transform: translateY(0);
+  transform: translateY(0); /* Reset position on hover */
   opacity: 1;
-  transition: all 0.3s ease;
+  transition: opacity 2s ease, transform 2s ease;
+
 }
+.exp-card.dark {
+  background-color: #222;
+  color: white;
+  border: 1px solid white;
+  
+}
+
+.exp-card.light {
+  background-color: #f9f9f9;
+  color: black;
+  border: 1px solid #ccc;
+}
+
 
 @media screen and (max-width: 740px) {
   .exp-card-container {

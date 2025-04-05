@@ -19,6 +19,7 @@ const ExpCard = ({ company, project, role, duties }) => {
       className={`exp-card ${theme}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      
     >
       {!isHovered ? (
         <div className="exp-card-content">
