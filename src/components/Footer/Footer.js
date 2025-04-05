@@ -8,10 +8,12 @@ import {
   FaPhone,
   FaYoutube,
 } from "react-icons/fa";
-
+import { useTheme } from "../../context/ThemeContext";
 import "./FooterStyles.css";
 
 const Footer = () => {
+  const { theme } = useTheme();
+  
   const navToFacebook = () => {
     return (window.location.href = "https://www.facebook.com/");
   };
@@ -30,8 +32,10 @@ const Footer = () => {
       "https://www.youtube.com/@jirehzoecabrales5060");
   };
 
+  const iconColor = theme === 'light' ? "#333" : "#fff";
+
   return (
-    <div className="footer">
+    <div className={`footer ${theme}`}>
       <div className="footer-container">
         <div
           className="left"
@@ -44,7 +48,7 @@ const Footer = () => {
           data-aos-once="true"
         >
           <div className="location">
-            <FaHome size={20} style={{ color: "#fff", marginRight: "2rem" }} />
+            <FaHome size={20} style={{ color: iconColor, marginRight: "2rem" }} />
             <div>
               <p>Opon Lapu-Lapu City, Cebu</p>
               <p>Philippines</p>
@@ -54,7 +58,7 @@ const Footer = () => {
             <h4>
               <FaPhone
                 size={20}
-                style={{ color: "#fff", marginRight: "2rem" }}
+                style={{ color: iconColor, marginRight: "2rem" }}
               />
               +63 945-381-6177
             </h4>
@@ -63,7 +67,7 @@ const Footer = () => {
             <h4>
               <FaEnvelope
                 size={20}
-                style={{ color: "#fff", marginRight: "2rem" }}
+                style={{ color: iconColor, marginRight: "2rem" }}
               />
               jirehzoe@gmail.com
             </h4>
@@ -89,28 +93,28 @@ const Footer = () => {
             <div className="social-fb" data-aos="zoom-in" data-aos-delay="100">
               <FaFacebook
                 size={30}
-                style={{ color: "#fff", marginRight: "2rem" }}
+                style={{ color: iconColor, marginRight: "2rem" }}
                 onClick={navToFacebook}
               />
             </div>
             <div className="social-fb" data-aos="zoom-in" data-aos-delay="200">
               <FaLinkedin
                 size={30}
-                style={{ color: "#fff", marginRight: "2rem" }}
+                style={{ color: iconColor, marginRight: "2rem" }}
                 onClick={navToLinkedIn}
               />
             </div>
             <div className="social-fb" data-aos="zoom-in" data-aos-delay="300">
               <FaGithub
                 size={30}
-                style={{ color: "#fff", marginRight: "2rem" }}
+                style={{ color: iconColor, marginRight: "2rem" }}
                 onClick={navToGithub}
               />
             </div>
             <div className="social-fb" data-aos="zoom-in" data-aos-delay="300">
               <FaYoutube
                 size={30}
-                style={{ color: "#fff", marginRight: "2rem" }}
+                style={{ color: iconColor, marginRight: "2rem" }}
                 onClick={navToYT}
               />
             </div>

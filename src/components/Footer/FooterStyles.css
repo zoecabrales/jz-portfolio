@@ -1,10 +1,20 @@
-.footer{
+.footer {
     width: 100%;
     padding: 6rem 0;
-    background-color: rgba(19, 19, 19, 0.8);
+    transition: all 0.5s ease;
 }
 
-.footer-container{
+.footer.dark {
+    background-color: rgba(19, 19, 19, 0.8);
+    color: #fff;
+}
+
+.footer.light {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333;
+}
+
+.footer-container {
     max-width: 1140px;
     margin: auto;
     display: grid;
@@ -20,16 +30,16 @@
     padding: 0.5rem;
 }
 
-.location{
+.location {
     display: flex;
     margin-bottom: 0.8rem;
 }
 
-.location p{
+.location p {
     line-height: 30px;
 }
 
-.right{
+.right {
     height: 100%;
     max-width: 100%;
     display: flex;
@@ -37,31 +47,47 @@
     padding: 1rem;
 }
 
-.social{
+.social {
     display: flex;
 }
 
-.social-fb{
+.social-fb {
     margin-top: 1rem;
     transition: 0.2s all ease-in-out;
 }
 
-.social-fb:hover{
+.social-fb:hover {
     cursor: pointer;
-    transform:scale(1.5);
+    transform: scale(1.5);
 }
 
-h4{
+.footer.light h4 {
+    color: #333;
+}
+
+.footer.dark h4 {
+    color: #fff;
+}
+
+.footer.light p {
+    color: #333;
+}
+
+.footer.dark p {
+    color: #fff;
+}
+
+h4 {
     font-size: 1.2rem;
     padding-bottom: 0.7rem;
 }
 
-p{
+p {
     font-size: 1.2rem;
 }
 
 @media screen and (max-width:640px) {
-    .footer-container{
+    .footer-container {
         grid-template-columns: 1fr;
     }
 }

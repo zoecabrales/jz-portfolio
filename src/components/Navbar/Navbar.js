@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./NavbarStyles.css";
-
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import ThemeToggleButton from "../Button/ThemeButton";
+import { useTheme } from "../../context/ThemeContext";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
+  const { theme } = useTheme();
 
   const [color, setColor] = useState(false);
   const changeColor = () => {
@@ -20,25 +22,25 @@ const Navbar = () => {
   window.addEventListener("scroll", changeColor);
 
   return (
-    <div className={color ? "header header-bg" : "header"}>
+    <div className={`header ${color ? "header-bg" : ""} ${theme}`}>
       <Link to="/">
         <h1 style={{ fontFamily: "Ubuntu, sans-serif", fontStyle: "normal" }}>
           JZ DevHub
         </h1>
       </Link>
-      <ul className={click ? "nav-menu active" : "nav-menu"}>
+      <ul className={`nav-menu ${click ? "active" : ""}`}>
         <li>
-          <Link to="/project" onClick={() => setClick(false)}>
+          <Link to="/project" onClick={() => setClick(false)} className={theme}>
             Projects
           </Link>
         </li>
         <li>
-          <Link to="/about" onClick={() => setClick(false)}>
+          <Link to="/about" onClick={() => setClick(false)} className={theme}>
             About
           </Link>
         </li>
         <li>
-          <Link to="/work" onClick={() => setClick(false)}>
+          <Link to="/work" onClick={() => setClick(false)} className={theme}>
             Work Experiences
           </Link>
         </li>
@@ -48,11 +50,14 @@ const Navbar = () => {
           </Link>
         </li> */}
       </ul>
+      <div className="theme-toggle-container">
+        {color && <ThemeToggleButton />}
+      </div>
       <div className="hamburger" onClick={handleClick}>
         {click ? (
-          <FaTimes size={20} style={{ color: "#fff" }} />
+          <FaTimes size={20} style={{ color: theme === 'light' ? "#333" : "#fff" }} />
         ) : (
-          <FaBars size={20} style={{ color: "#fff" }} />
+          <FaBars size={20} style={{ color: theme === 'light' ? "#333" : "#fff" }} />
         )}
       </div>
     </div>

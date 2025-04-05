@@ -13,31 +13,68 @@
     height: 90px;
     z-index: 10;
     background-color: transparent;
-    transition: background-color 0.5s;
+    transition: all 0.5s ease;
     font-family: 'Ubuntu', sans-serif;
 }
 
-.header-bg {
+.header.light {
+    background-color: transparent;
+}
+
+.header.dark {
+    background-color: transparent;
+}
+
+.header.light.header-bg {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header.dark.header-bg {
     background-color: rgba(0, 0, 0, 0.85);
+}
+
+.header.light h1 {
+    color: #333;
+}
+
+.header.dark h1 {
+    color: #fff;
 }
 
 .nav-menu {
     display: flex;
+    margin-left: auto;
+    margin-right: 2rem;
 }
 
 .nav-menu li {
     padding: 0 1rem;
-    color: black;
 }
 
 .nav-menu li a {
     font-size: 1.2rem;
     font-weight: 500;
     font-family: 'Ubuntu', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a.light {
+    color: #333;
+}
+
+.nav-menu li a.dark {
+    color: #fff;
 }
 
 .nav-menu li a:hover {
     text-decoration: overline;
+}
+
+.theme-toggle-container {
+    display: flex;
+    align-items: center;
+    transition: opacity 0.3s ease;
 }
 
 .hamburger {
@@ -60,6 +97,7 @@
         left: -100%;
         z-index: -1;
         transition: left 0.3s ease-in-out;
+        margin: 0;
     }
 
     .nav-menu.active {
@@ -73,27 +111,31 @@
 
     .nav-menu li a {
         font-size: 2rem;
-        color: white;
     }
 
     .hamburger {
         display: block;
     }
-}
 
-/* Add theme-specific styles */
-.header.light {
-    background-color: rgba(255, 255, 255, 0.95);
-}
+    .theme-toggle-container {
+        display: none;
+    }
 
-.header.dark {
-    background-color: rgba(0, 0, 0, 0.85);
-}
+    /* Mobile menu background colors */
+    .header.light .nav-menu {
+        background: rgba(255, 255, 255, 0.95);
+    }
 
-.nav-menu li a.light {
-    color: #333;
-}
+    .header.dark .nav-menu {
+        background: rgba(0, 0, 0, 0.9);
+    }
 
-.nav-menu li a.dark {
-    color: #fff;
+    /* Mobile menu text colors */
+    .header.light .nav-menu li a {
+        color: #333;
+    }
+
+    .header.dark .nav-menu li a {
+        color: #fff;
+    }
 }
