@@ -5,13 +5,13 @@
   background-color: black;
 }
 
+/* Import the common section heading styles */
+@import '../../../components/common/SectionHeadingStyles.css';
+
 .exp-heading {
-  text-align: center;
-  color: #fff;
+  /* Extend the common section heading styles */
+  composes: section-heading;
   margin-bottom: 3rem;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
 
 .exp-card-container {
@@ -29,13 +29,20 @@
   padding: 1.5rem;
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: all 0.3s ease;
+  height: 250px;
   min-height: 250px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.exp-card:hover {
+.exp-card:hover,
+.exp-card.hovered {
   background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.03);
+  height: auto;
+  z-index: 10;
 }
 
 .exp-card h2 {
@@ -59,15 +66,49 @@
   font-size: 1rem;
 }
 
-.exp-card-duties h2 {
+/* Front and back card faces */
+.exp-card-front,
+.exp-card-back {
+  width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.exp-card-front {
+  height: 100%;
+}
+
+.exp-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  height: auto;
+}
+
+.exp-card-back h2 {
   text-align: center;
   margin-bottom: 1.5rem;
 }
 
-.exp-card-duties p {
+.exp-card-back p {
   margin-left: 1rem;
   text-indent: -1rem;
   color: #ddd;
+}
+
+/* Hover state using class */
+.exp-card.hovered .exp-card-front {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.exp-card.hovered .exp-card-back {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
 }
 
 @media screen and (max-width: 1200px) {

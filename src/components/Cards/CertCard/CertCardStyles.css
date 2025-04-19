@@ -19,13 +19,20 @@
     padding: 1.5rem;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: all 0.3s ease;
+    height: 200px;
     min-height: 200px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-.card:hover {
+.card:hover,
+.card.hovered {
     background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.03);
+    height: auto;
+    z-index: 10;
 }
 
 .card h3 {
@@ -50,6 +57,16 @@
     margin-top: 1.5rem;
     padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.hover-info.visible,
+.card.hovered .hover-info {
+    opacity: 1;
+    max-height: 200px; /* Adjust as needed */
 }
 
 .hover-info p {
@@ -58,6 +75,12 @@
     line-height: 1.6;
     margin: 0.5rem 0;
     text-align: left;
+}
+
+.card-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 @media screen and (max-width: 1200px) {

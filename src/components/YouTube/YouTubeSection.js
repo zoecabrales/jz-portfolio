@@ -1,6 +1,7 @@
 import React from "react";
 import YouTube from "react-youtube";
 import "./YouTubeSectionStyles.css";
+import "../common/SectionHeadingStyles.css";
 
 const YouTubeSection = () => {
   const videoOptions = {
@@ -14,11 +15,11 @@ const YouTubeSection = () => {
   return (
     <div className="youtube-section" data-aos="fade-up">
       <div className="video-container">
-        <h2>Check Out My YouTube Channel!</h2>
+        <h2 className="section-heading">Check Out My YouTube Channel!</h2>
         <YouTube videoId="QSURtD1gro8" opts={videoOptions} />
       </div>
     </div>
   );
 };
 
-export default YouTubeSection; 
+export default YouTubeSection;

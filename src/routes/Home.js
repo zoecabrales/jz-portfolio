@@ -10,6 +10,7 @@ import MobileCardData from "../components/data/MobileCardData";
 import WorkCard from "../components/Cards/WorkCard/WorkCard";
 import YouTubeSection from "../components/YouTube/YouTubeSection";
 import FigmaSection from "../components/Figma/FigmaSection";
+import "../components/common/SectionHeadingStyles.css";
 
 const Home = ({ heading, text }) => {
   return (
@@ -21,7 +22,7 @@ const Home = ({ heading, text }) => {
       {/* Mobile Projects Section */}
       <div className="work-container">
         <div className="section-container">
-          <h1 className="project-heading">Mobile Projects</h1>
+          <h1 className="section-heading project-heading">Mobile Projects</h1>
           <div className="project-container">
             {MobileCardData.map((item, index) => (
               <WorkCard

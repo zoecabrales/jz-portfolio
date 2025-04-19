@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../common/SectionHeadingStyles.css";
 import {
   faHtml5,
   faCss3Alt,
@@ -68,7 +69,9 @@ const AboutContent = () => {
   return (
     <div className="about">
       <div className="heading">
-        <h1 data-aos="fade-up">Who am I?</h1>
+        <h1 className="section-heading" data-aos="fade-up">
+          Who am I?
+        </h1>
         <p data-aos="fade-up">
           I have been in the software development industry for 3+ years now.
           {<br />}

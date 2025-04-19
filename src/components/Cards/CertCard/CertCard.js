@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./CertCardStyles.css";
+import "../../../components/common/SectionHeadingStyles.css";
 
 const CertCard = ({ heading }) => {
   const [hoveredCert, setHoveredCert] = useState(null);
+  const cardRefs = useRef({});
 
   const certifications = [
     {
@@ -43,14 +45,35 @@ const CertCard = ({ heading }) => {
     },
   ];
 
-  // Get the current hovered certification details
-  const hoveredCertDetails = certifications.find(
-    (cert) => cert.id === hoveredCert
-  );
+  // Set up DOM-based hover effects
+  useEffect(() => {
+    certifications.forEach((cert) => {
+      const card = cardRefs.current[cert.id];
+      if (!card) return;
+
+      const handleMouseEnter = () => {
+        card.classList.add("hovered");
+        setHoveredCert(cert.id);
+      };
+
+      const handleMouseLeave = () => {
+        card.classList.remove("hovered");
+        setHoveredCert(null);
+      };
+
+      card.addEventListener("mouseenter", handleMouseEnter);
+      card.addEventListener("mouseleave", handleMouseLeave);
+
+      return () => {
+        card.removeEventListener("mouseenter", handleMouseEnter);
+        card.removeEventListener("mouseleave", handleMouseLeave);
+      };
+    });
+  }, [certifications]);
 
   return (
     <div className="heading">
-      <h1>My Digital Certifications</h1>
+      <h1 className="section-heading">My Digital Certifications</h1>
       <h2>{heading}</h2>
       <h4
         style={{ marginTop: "50px" }}
@@ -79,26 +102,29 @@ const CertCard = ({ heading }) => {
             <div
               key={cert.id}
               className="card"
-              onMouseEnter={() => setHoveredCert(cert.id)}
-              onMouseLeave={() => setHoveredCert(null)}
+              ref={(el) => (cardRefs.current[cert.id] = el)}
             >
-              <h3>- {cert.platform} -</h3>
-              <a
-                href={cert.link}
-                style={{ fontSize: "1.5rem" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {cert.title}
-              </a>
-              <br />
-              {hoveredCert === cert.id && (
-                <div className="hover-info">
+              <div className="card-content">
+                <h3>- {cert.platform} -</h3>
+                <a
+                  href={cert.link}
+                  style={{ fontSize: "1.5rem" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {cert.title}
+                </a>
+                <br />
+                <div
+                  className={`hover-info ${
+                    hoveredCert === cert.id ? "visible" : ""
+                  }`}
+                >
                   <p>Instructor: {cert.instructor}</p>
                   <p>Date: {cert.dateCompleted}</p>
                   <p>Video Length: {cert.videoLength}</p>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>
