@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./WorkCardStyles.css";
+import ProjectModal from "../../Modal/ProjectModal";
+import { useTheme } from "../../../context/ThemeContext";
 
 const WorkCard = ({
   imgsrc,
@@ -10,115 +12,85 @@ const WorkCard = ({
   tools,
   source,
 }) => {
+  const { theme } = useTheme();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const cardRef = useRef(null);
   const descriptionRef = useRef(null);
 
-  // Auto-rotate screenshots if available
-  useEffect(() => {
-    let intervalId;
-    if (screenshots && screenshots.length > 1) {
-      intervalId = setInterval(() => {
-        setCurrentImageIndex((prev) =>
-          prev === screenshots.length - 1 ? 0 : prev + 1
-        );
-      }, 2000); // Change image every 2 seconds
-    }
-    return () => {
-      if (intervalId) clearInterval(intervalId);
-    };
-  }, [screenshots]);
+  // Handle card click to open modal
+  const handleCardClick = () => {
+    setIsModalOpen(true);
+  };
 
-  // Set up hover effect with DOM manipulation instead of React state
-  useEffect(() => {
-    const card = cardRef.current;
-    const description = descriptionRef.current;
-    if (!description || !card) return;
+  // No longer need auto-rotate for card view
 
-    const textContent = text;
-    const toolsContent = tools;
-    const paragraph = description.querySelector("p");
-
-    const handleMouseEnter = () => {
-      paragraph.textContent = toolsContent;
-      description.classList.add("hovered");
-      card.classList.add("hovered");
-    };
-
-    const handleMouseLeave = () => {
-      paragraph.textContent = textContent;
-      description.classList.remove("hovered");
-      card.classList.remove("hovered");
-    };
-
-    description.addEventListener("mouseenter", handleMouseEnter);
-    description.addEventListener("mouseleave", handleMouseLeave);
-
-    return () => {
-      description.removeEventListener("mouseenter", handleMouseEnter);
-      description.removeEventListener("mouseleave", handleMouseLeave);
-    };
-  }, [text, tools]);
+  // No hover effect needed anymore
 
   return (
-    <div
-      ref={cardRef}
-      className="project-card"
-      data-aos="fade-up"
-      data-aos-delay="100"
-      data-aos-duration="400"
-    >
-      <div className="image-container">
-        {screenshots ? (
-          <>
-            <img
-              src={screenshots[currentImageIndex]}
-              alt={`${title} screenshot ${currentImageIndex + 1}`}
-              className="project-image"
-            />
-            <div className="screenshot-dots">
-              {screenshots.map((_, index) => (
-                <span
-                  key={index}
-                  className={`dot ${
-                    index === currentImageIndex ? "active" : ""
-                  }`}
-                  onClick={() => setCurrentImageIndex(index)}
-                />
-              ))}
-            </div>
-          </>
-        ) : (
-          <img src={imgsrc} alt="project" className="project-image" />
-        )}
-      </div>
-      <h2 className="project-title">{title}</h2>
-      <div className="project-details">
-        <div ref={descriptionRef} className="project-description">
-          <p>{text}</p>
-        </div>
-        <div className="project-btns">
-          <a
-            href={source}
-            className="btn"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View source code"
-          >
-            <span>Code</span>
-          </a>
-          <a
-            href={view}
-            className="btn"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View demo"
-          >
-            <span>Demo</span>
-          </a>
+    <>
+      <div
+        ref={cardRef}
+        className={`project-card ${theme}`}
+        data-aos="fade-up"
+        data-aos-delay="100"
+        data-aos-duration="400"
+      >
+        <h2 className="project-title">{title}</h2>
+        <div className="project-details">
+          <div ref={descriptionRef} className="project-description">
+            <p>{text}</p>
+          </div>
+          <div className="view-more-container">
+            <button
+              className={`view-more-btn ${theme}`}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsModalOpen(true);
+              }}
+            >
+              <span>Click for more info</span>
+            </button>
+          </div>
+          <div className="project-btns">
+            <a
+              href={source}
+              className={`btn ${theme}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View source code"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <span>Code</span>
+            </a>
+            <a
+              href={view}
+              className={`btn ${theme}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View demo"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <span>Demo</span>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+
+      {/* Project Modal */}
+      <ProjectModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        project={{
+          title,
+          text,
+          tools,
+          screenshots,
+          view,
+          source,
+        }}
+      />
+    </>
   );
 };
 

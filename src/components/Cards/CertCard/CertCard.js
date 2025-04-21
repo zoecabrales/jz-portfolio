@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./CertCardStyles.css";
 import "../../../components/common/SectionHeadingStyles.css";
+import { useTheme } from "../../../context/ThemeContext";
 
 const CertCard = ({ heading }) => {
+  const { theme } = useTheme();
   const [hoveredCert, setHoveredCert] = useState(null);
   const cardRefs = useRef({});
 
@@ -101,7 +103,7 @@ const CertCard = ({ heading }) => {
           {certifications.map((cert) => (
             <div
               key={cert.id}
-              className="card"
+              className={`card ${theme}`}
               ref={(el) => (cardRefs.current[cert.id] = el)}
             >
               <div className="card-content">

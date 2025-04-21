@@ -58,30 +58,51 @@
 
 /* Modern Card Styles */
 .project-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 0;
+    padding: 1.5rem;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    height: 500px;
+    height: auto;
+    min-height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     overflow: hidden;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     position: relative;
+    cursor: default;
+}
+
+/* Dark theme styles */
+.project-card.dark {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Light theme styles */
+.project-card.light {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .project-card:hover,
 .project-card.hovered {
     transform: translateY(-10px);
+    z-index: 10;
+}
+
+.project-card.dark:hover,
+.project-card.dark.hovered {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
     background: rgba(255, 255, 255, 0.1);
-    height: auto;
-    min-height: 500px;
-    z-index: 10;
+}
+
+.project-card.light:hover,
+.project-card.light.hovered {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 1);
 }
 
 .project-card:before {
@@ -152,13 +173,39 @@
 }
 
 .project-title {
-    color: #fff;
-    padding: 1.5rem 1.5rem 0.5rem;
     font-size: 1.6rem;
     font-weight: 600;
     letter-spacing: 0.5px;
-    margin: 0;
+    margin: 0 0 1rem 0;
     position: relative;
+    text-align: center;
+    padding-bottom: 0.75rem;
+}
+
+.project-card.dark .project-title {
+    color: #fff;
+}
+
+.project-card.light .project-title {
+    color: #333;
+}
+
+.project-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+}
+
+.project-card.dark .project-title:after {
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+}
+
+.project-card.light .project-title:after {
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%);
 }
 
 .project-details {
@@ -173,45 +220,89 @@
 
 .project-description {
     flex-grow: 1;
-    cursor: pointer;
     position: relative;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    max-height: 120px; /* Default height when not hovered */
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .project-description p {
     font-size: 1rem;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.8);
-    transition: all 0.3s ease;
     margin: 0;
     position: relative;
 }
 
-.project-description:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
-    opacity: 1;
-    transition: opacity 0.3s ease;
+.project-card.dark .project-description p {
+    color: rgba(255, 255, 255, 0.9);
 }
 
-.project-description.hovered {
-    max-height: none; /* Allow full expansion when hovered */
+.project-card.light .project-description p {
+    color: rgba(0, 0, 0, 0.8);
 }
 
-.project-description.hovered:after {
-    opacity: 0;
+.tools-section {
+    margin: 1rem 0;
 }
 
-.project-description.hovered p {
+.tools-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.view-more-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.view-more-btn {
+    padding: 0.7rem 1.4rem;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view-more-btn.dark {
+    background: rgba(0, 123, 255, 0.2);
+    border: 1px solid rgba(0, 123, 255, 0.5);
     color: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.view-more-btn.light {
+    background: rgba(0, 123, 255, 0.1);
+    border: 1px solid rgba(0, 123, 255, 0.3);
+    color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.view-more-btn.dark:hover {
+    background: rgba(0, 123, 255, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.view-more-btn.light:hover {
+    background: rgba(0, 123, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.view-more-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.view-more-btn:before {
+    content: '📱';
+    margin-right: 8px;
+    font-size: 1.1rem;
 }
 
 .project-btns {
@@ -225,9 +316,6 @@
     flex: 1;
     padding: 0.9rem 0;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
     font-size: 0.95rem;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -238,11 +326,30 @@
     -webkit-backdrop-filter: blur(5px);
 }
 
-.project-btns .btn:hover {
+.project-btns .btn.dark {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.project-btns .btn.light {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.project-btns .btn.dark:hover {
     background: rgba(255, 255, 255, 0.9);
     color: #000;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-btns .btn.light:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 @media screen and (max-width: 1200px) {
@@ -284,11 +391,7 @@
 
     .project-card {
         height: auto;
-        min-height: 480px;
-    }
-
-    .image-container {
-        height: 220px;
+        min-height: 320px;
     }
 
     .project-heading {
@@ -302,5 +405,14 @@
 
     .project-description:after {
         display: none;
+    }
+
+    .project-title {
+        font-size: 1.4rem;
+    }
+
+    .view-more-btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
     }
 }

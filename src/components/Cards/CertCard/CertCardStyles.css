@@ -14,11 +14,8 @@
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 1.5rem;
     border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     height: 200px;
     min-height: 200px;
@@ -27,40 +24,88 @@
     cursor: pointer;
 }
 
+.card.dark {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card.light {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
 .card:hover,
 .card.hovered {
-    background: rgba(255, 255, 255, 0.15);
     transform: translateY(-5px) scale(1.03);
     height: auto;
     z-index: 10;
 }
 
+.card.dark:hover,
+.card.dark.hovered {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.card.light:hover,
+.card.light.hovered {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
 .card h3 {
     font-size: 1.4rem;
     padding: 1rem;
-    color: white;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 1rem;
 }
 
+.card.dark h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.card.light h3 {
+    color: #333;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
 .card a {
-    color: #ddd;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.card a:hover {
+.card.dark a {
+    color: #ddd;
+}
+
+.card.light a {
+    color: #0066cc;
+}
+
+.card.dark a:hover {
     color: white;
+}
+
+.card.light a:hover {
+    color: #0099ff;
 }
 
 .hover-info {
     margin-top: 1.5rem;
     padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
     opacity: 0;
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease;
+}
+
+.card.dark .hover-info {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card.light .hover-info {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .hover-info.visible,
@@ -70,11 +115,18 @@
 }
 
 .hover-info p {
-    color: #ddd;
     font-size: 1rem;
     line-height: 1.6;
     margin: 0.5rem 0;
     text-align: left;
+}
+
+.card.dark .hover-info p {
+    color: #ddd;
+}
+
+.card.light .hover-info p {
+    color: #666;
 }
 
 .card-content {

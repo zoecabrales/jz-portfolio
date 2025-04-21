@@ -24,11 +24,8 @@
 }
 
 .exp-card {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 1.5rem;
   border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
   height: 250px;
   min-height: 250px;
@@ -37,33 +34,77 @@
   cursor: pointer;
 }
 
+.exp-card.dark {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exp-card.light {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
 .exp-card:hover,
 .exp-card.hovered {
-  background: rgba(255, 255, 255, 0.15);
   transform: translateY(-5px) scale(1.03);
   height: auto;
   z-index: 10;
 }
 
+.exp-card.dark:hover,
+.exp-card.dark.hovered {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.exp-card.light:hover,
+.exp-card.light.hovered {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
 .exp-card h2 {
   font-size: 1.4rem;
   padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.exp-card.dark h2 {
   color: #fff;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 1rem;
+}
+
+.exp-card.light h2 {
+  color: #333;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .exp-card h4 {
   font-size: 1.2rem;
   padding-bottom: 0.5rem;
+}
+
+.exp-card.dark h4 {
   color: #ddd;
+}
+
+.exp-card.light h4 {
+  color: #555;
 }
 
 .exp-card p {
   padding: 0.5rem 0;
-  color: #ddd;
   line-height: 1.6;
   font-size: 1rem;
+}
+
+.exp-card.dark p {
+  color: #ddd;
+}
+
+.exp-card.light p {
+  color: #666;
 }
 
 /* Front and back card faces */
@@ -109,6 +150,17 @@
   opacity: 1;
   pointer-events: auto;
   position: relative;
+}
+
+/* Theme-specific styles for card back */
+.exp-card.dark .exp-card-back h2 {
+  color: #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.exp-card.light .exp-card-back h2 {
+  color: #333;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 1200px) {

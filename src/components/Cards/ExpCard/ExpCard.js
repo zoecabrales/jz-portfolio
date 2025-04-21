@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./ExpCardStyles.css";
-import { useTheme } from "../../../context/ThemeContext"; // Import the useTheme hook
+import { useTheme } from "../../../context/ThemeContext";
 
 const ExpCard = ({ company, project, role, duties }) => {
   const { theme } = useTheme();
