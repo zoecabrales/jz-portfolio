@@ -1,7 +1,7 @@
 const ExpCardData = [
   {
     company: "MyUse",
-    project: "Mobile Fashion & Travel App",
+    project: "Fashion & Travel App",
     role: "React Native Developer",
     contract: "Contract",
     duties: [
