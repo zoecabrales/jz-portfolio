@@ -16,6 +16,7 @@ const Exp = () => {
               company={value.company}
               project={value.project}
               role={value.role}
+              contract={value.contract}
               duties={value.duties}
             />
           );

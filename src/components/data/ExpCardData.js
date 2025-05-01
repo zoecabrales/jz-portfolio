@@ -1,14 +1,31 @@
 const ExpCardData = [
   {
+    company: "MyUse",
+    project: "Mobile Fashion & Travel App",
+    role: "React Native Developer",
+    contract: "Contract",
+    duties: [
+      "Digital Closet Management System",
+      "Meteor API Integration",
+      "React Native with Expo",
+      "TanStack Query (React Query)",
+      "Styled-components & NativeWind",
+      "Expo Router Navigation",
+      "React Native Reanimated",
+      "AsyncStorage & Secure Store",
+    ],
+  },
+  {
     company: "Fay Financial",
     project: "Applications Development",
     role: "ServiceNow Admin/Developer",
+    contract: "Full-time",
     duties: [
       "ITSM Module",
       "Flow designer implementation",
       "Client-side scripting",
       "Server-side scripting",
-      "Employee Center Portal implementation",
+      "Employee Center Portal",
       "ACLs & Roles",
       "Catalog Item Creation",
       "Javascript",
@@ -18,10 +35,11 @@ const ExpCardData = [
     company: "SDH Immigration Services",
     project: "PollenLov",
     role: "React Native Developer",
+    contract: "Contract (ended)",
     duties: [
       "React Native Expo",
       "Expo router",
-      "Firebase Auth and Validations",
+      "Firebase Auth and Validation",
       "Firestore",
       "Redux",
       "Javascript",
@@ -31,7 +49,8 @@ const ExpCardData = [
   {
     company: "Viseo",
     project: "My Unique Moments",
-    role: "Junior Applications Developer",
+    role: "Junior Application Developer",
+    contract: "Full-time (ended)",
     duties: [
       "Code refactoring",
       "Test flight deployment",

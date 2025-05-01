@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "./ExpCardStyles.css";
 import { useTheme } from "../../../context/ThemeContext";
 
-const ExpCard = ({ company, project, role, duties }) => {
+const ExpCard = ({ company, project, role, contract, duties }) => {
   const { theme } = useTheme();
   const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef(null);
@@ -45,6 +45,7 @@ const ExpCard = ({ company, project, role, duties }) => {
         <h2>{`Company: ${company}`}</h2>
         <h4>{`Project: ${project}`}</h4>
         <p>{`Role: ${role}`}</p>
+        <p className="contract-type">{`Contract: ${contract}`}</p>
       </div>
       <div className="exp-card-back">
         <h2>Tasks & Tools</h2>

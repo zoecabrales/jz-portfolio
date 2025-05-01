@@ -99,12 +99,26 @@
   font-size: 1rem;
 }
 
+.exp-card .contract-type {
+  margin-top: 0.5rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
 .exp-card.dark p {
   color: #ddd;
 }
 
+.exp-card.dark .contract-type {
+  color: #a3d5ff;
+}
+
 .exp-card.light p {
   color: #666;
+}
+
+.exp-card.light .contract-type {
+  color: #0066cc;
 }
 
 /* Front and back card faces */
