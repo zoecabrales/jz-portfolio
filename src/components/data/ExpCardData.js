@@ -3,7 +3,7 @@ const ExpCardData = [
     company: "MyUse",
     project: "Fashion & Travel App",
     role: "React Native Developer",
-    contract: "Contract",
+    contract: "Part-time",
     duties: [
       "Digital Closet Management System",
       "Meteor API Integration",
@@ -34,7 +34,7 @@ const ExpCardData = [
     company: "SDH Immigration Services",
     project: "PollenLov",
     role: "React Native Developer",
-    contract: "Contract (ended)",
+    contract: "Part-time (ended)",
     duties: [
       "React Native Expo",
       "Expo router",
