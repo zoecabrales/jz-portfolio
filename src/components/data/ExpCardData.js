@@ -22,13 +22,12 @@ const ExpCardData = [
     contract: "Full-time",
     duties: [
       "ITSM Module",
-      "Flow designer implementation",
-      "Client-side scripting",
-      "Server-side scripting",
+      "Flow Designer automations",
+      "Client/Server-side scripting",
       "Employee Center Portal",
       "ACLs & Roles",
       "Catalog Item Creation",
-      "Javascript",
+      "Integration hub with Spokes (Jira, Slack)",
     ],
   },
   {
