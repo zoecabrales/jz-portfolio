@@ -10,6 +10,7 @@ const ThemeToggleButton = () => {
       className={`theme-toggle ${theme}`} 
       onClick={toggleTheme}
       aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+      aria-pressed={theme === "light"}
     >
       {theme === 'dark' ? '☀️' : '🌙'}
     </button>

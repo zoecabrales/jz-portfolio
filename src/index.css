@@ -1,5 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+:root {
+  --accent-color: #f6c453;
+  --accent-rgb: 246, 196, 83;
+  --accent-contrast: #805800;
+  --accent-foreground: #171717;
+  --page-bg: #000;
+  --section-bg: #080a0d;
+  --surface-bg: #14171b;
+  --surface-muted: #0b0d10;
+  --text-primary: #f5f5f5;
+  --text-secondary: rgba(255, 255, 255, 0.72);
+  --border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.light {
+  --page-bg: #f4f6f8;
+  --section-bg: #edf0f3;
+  --surface-bg: #fff;
+  --surface-muted: #e6eaee;
+  --text-primary: #20262d;
+  --text-secondary: #4b5560;
+  --border-color: rgba(20, 30, 40, 0.14);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,12 +32,22 @@
 }
 
 body {
-  background: black;
+  background: var(--page-bg);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 h1, h4, p, a {
-  color: white;
+  color: var(--text-primary);
   text-decoration: none;
+}
+
+body.light {
+  color-scheme: light;
+}
+
+body.dark {
+  color-scheme: dark;
 }
 
 ul {
@@ -24,20 +58,62 @@ ul {
   padding: 12px 32px;
   font-size: 1rem;
   text-transform: uppercase;
-  background: #F6C453;
-  color: #222;
-  border: 1px solid #fff;
+  background: var(--accent-color);
+  color: var(--accent-foreground);
+  border: 1px solid var(--accent-color);
+  border-radius: 999px;
   font-weight: 600;
   cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease, transform 0.2s ease;
 }
 
 .btn-light {
   background: transparent;
   color: #fff;
+  border-color: rgba(255, 255, 255, 0.65);
 }
 
 .btn:hover {
-  background: rgba(255, 255, 255, 0);
-  color: #fff;
-  transition: 0.3s;
+  background: #fff;
+  border-color: #fff;
+  color: var(--accent-foreground);
+  transform: translateY(-1px);
+}
+
+.btn-light:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+body.light .btn-light {
+  color: var(--text-primary);
+  border-color: rgba(20, 30, 40, 0.45);
+}
+
+body.light .btn-light:hover {
+  background: rgba(20, 30, 40, 0.06);
+  border-color: var(--accent-contrast);
+  color: var(--accent-contrast);
+}
+
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+
+  body {
+    transition: none;
+  }
 }

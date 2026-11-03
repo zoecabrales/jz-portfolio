@@ -5,17 +5,22 @@ const Form = () => {
   return (
     <div className="form">
       <form>
-        <label>Full Name</label>
-        <input type="text"></input>
+        <label htmlFor="contact-name">Full Name</label>
+        <input id="contact-name" name="name" type="text" />
 
-        <label>Email</label>
-        <input type="email"></input>
+        <label htmlFor="contact-email">Email</label>
+        <input id="contact-email" name="email" type="email" />
 
-        <label>Subject</label>
-        <input type="text"></input>
+        <label htmlFor="contact-subject">Subject</label>
+        <input id="contact-subject" name="subject" type="text" />
 
-        <label>Message</label>
-        <textarea rows={6} placeholder="Type your message here" />
+        <label htmlFor="contact-message">Message</label>
+        <textarea
+          id="contact-message"
+          name="message"
+          rows={6}
+          placeholder="Type your message here"
+        />
         <button type="submit" className="btn">
           Submit
         </button>
@@ -29,6 +34,7 @@ const Form = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="btn"
+          aria-label="Download resume"
         >
           Download Resume
         </a>

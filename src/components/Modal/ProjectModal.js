@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import "./ProjectModalStyles.css";
+import { useTheme } from "../../context/ThemeContext";
 
 const ProjectModal = ({ isOpen, onClose, project }) => {
+  const { theme } = useTheme();
   const modalRef = useRef(null);
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
 
@@ -54,7 +56,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
   const { title, text, tools, screenshots, view, source } = project;
 
   return (
-    <div className="modal-overlay">
+    <div className={`modal-overlay ${theme}`}>
       <div className="modal-container" ref={modalRef}>
         <button
           className="modal-close-btn"
@@ -81,15 +83,18 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
           {screenshots && screenshots.length > 1 && (
             <div className="modal-thumbnails">
               {screenshots.map((screenshot, index) => (
-                <div
+                <button
+                  type="button"
                   key={index}
                   className={`thumbnail ${
                     index === currentImageIndex ? "active" : ""
                   }`}
                   onClick={() => setCurrentImageIndex(index)}
+                  aria-label={`Show ${title} screenshot ${index + 1}`}
+                  aria-pressed={index === currentImageIndex}
                 >
-                  <img src={screenshot} alt={`Thumbnail ${index + 1}`} />
-                </div>
+                  <img src={screenshot} alt="" aria-hidden="true" />
+                </button>
               ))}
             </div>
           )}
@@ -106,24 +111,30 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
             </div>
           </div>
 
-          <div className="modal-actions">
-            <a
-              href={source}
-              className="modal-btn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Code
-            </a>
-            <a
-              href={view}
-              className="modal-btn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live Demo
-            </a>
-          </div>
+          {(source || view) && (
+            <div className="modal-actions">
+              {source && (
+                <a
+                  href={source}
+                  className="modal-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Code
+                </a>
+              )}
+              {view && (
+                <a
+                  href={view}
+                  className="modal-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </a>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 .exp {
   width: 100%;
-  padding: 6rem 1rem;
-  color: white;
-  background-color: black;
+  padding: clamp(4rem, 7vw, 5.5rem) clamp(1.25rem, 4vw, 2rem);
+  color: var(--text-primary);
+  background-color: var(--page-bg);
 }
 
 /* Import the common section heading styles */
@@ -11,7 +11,7 @@
 .exp-heading {
   /* Extend the common section heading styles */
   composes: section-heading;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .exp-card-container {
@@ -153,6 +153,10 @@
   color: #ddd;
 }
 
+.exp-card.light .exp-card-back p {
+  color: #666;
+}
+
 /* Hover state using class */
 .exp-card.hovered .exp-card-front {
   opacity: 0;
@@ -191,8 +195,48 @@
 
 @media screen and (max-width: 740px) {
   .exp-card-container {
-    max-width: 90%;
+    max-width: 100%;
     margin: auto;
+    padding: 0;
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 940px), (hover: none) {
+  .exp-card {
+    height: auto;
+    min-height: 0;
+    cursor: default;
+    transform: none;
+  }
+
+  .exp-card.hovered .exp-card-front {
+    position: relative;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .exp-card:hover,
+  .exp-card.hovered {
+    transform: none;
+  }
+
+  .exp-card-front {
+    height: auto;
+  }
+
+  .exp-card-back {
+    position: relative;
+    height: auto;
+    margin-top: 1rem;
+    padding: 1.5rem 0 0;
+    border-top: 1px solid var(--border-color);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .exp-card-back h2 {
+    text-align: left;
+    margin-bottom: 0.75rem;
   }
 }

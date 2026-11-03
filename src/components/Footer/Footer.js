@@ -13,26 +13,20 @@ import "./FooterStyles.css";
 
 const Footer = () => {
   const { theme } = useTheme();
-  
-  const navToFacebook = () => {
-    return (window.location.href = "https://www.facebook.com/");
-  };
-
-  const navToLinkedIn = () => {
-    return (window.location.href =
-      "https://www.linkedin.com/in/jireh-zoe-cabrales-74ba5164/");
-  };
-
-  const navToGithub = () => {
-    return (window.location.href = "https://github.com/zoecabrales");
-  };
-
-  const navToYT = () => {
-    return (window.location.href =
-      "https://www.youtube.com/@jirehzoecabrales5060");
-  };
-
-  const iconColor = theme === 'light' ? "#333" : "#fff";
+  const socialLinks = [
+    { href: "https://www.facebook.com/", label: "Facebook", Icon: FaFacebook },
+    {
+      href: "https://www.linkedin.com/in/jireh-zoe-cabrales-74ba5164/",
+      label: "LinkedIn",
+      Icon: FaLinkedin,
+    },
+    { href: "https://github.com/zoecabrales", label: "GitHub", Icon: FaGithub },
+    {
+      href: "https://www.youtube.com/@jirehzoecabrales5060",
+      label: "YouTube",
+      Icon: FaYoutube,
+    },
+  ];
 
   return (
     <div className={`footer ${theme}`}>
@@ -48,30 +42,20 @@ const Footer = () => {
           data-aos-once="true"
         >
           <div className="location">
-            <FaHome size={20} style={{ color: iconColor, marginRight: "2rem" }} />
+            <FaHome className="footer-contact-icon" aria-hidden="true" />
             <div>
               <p>Opon Lapu-Lapu City, Cebu</p>
               <p>Philippines</p>
             </div>
           </div>
-          <div className="phone">
-            <h4>
-              <FaPhone
-                size={20}
-                style={{ color: iconColor, marginRight: "2rem" }}
-              />
-              +63 945-381-6177
-            </h4>
-          </div>
-          <div className="email">
-            <h4>
-              <FaEnvelope
-                size={20}
-                style={{ color: iconColor, marginRight: "2rem" }}
-              />
-              jirehzoe@gmail.com
-            </h4>
-          </div>
+          <a className="footer-contact-item" href="tel:+639453816177">
+            <FaPhone className="footer-contact-icon" aria-hidden="true" />
+            <span>+63 945-381-6177</span>
+          </a>
+          <a className="footer-contact-item" href="mailto:jirehzoe@gmail.com">
+            <FaEnvelope className="footer-contact-icon" aria-hidden="true" />
+            <span>jirehzoe@gmail.com</span>
+          </a>
         </div>
         <div
           className="right"
@@ -89,36 +73,22 @@ const Footer = () => {
             development, I enjoy discussing new project ideas and design
             challenges.
           </p>
-          <div className="social">
-            <div className="social-fb" data-aos="zoom-in" data-aos-delay="100">
-              <FaFacebook
-                size={30}
-                style={{ color: iconColor, marginRight: "2rem" }}
-                onClick={navToFacebook}
-              />
-            </div>
-            <div className="social-fb" data-aos="zoom-in" data-aos-delay="200">
-              <FaLinkedin
-                size={30}
-                style={{ color: iconColor, marginRight: "2rem" }}
-                onClick={navToLinkedIn}
-              />
-            </div>
-            <div className="social-fb" data-aos="zoom-in" data-aos-delay="300">
-              <FaGithub
-                size={30}
-                style={{ color: iconColor, marginRight: "2rem" }}
-                onClick={navToGithub}
-              />
-            </div>
-            <div className="social-fb" data-aos="zoom-in" data-aos-delay="300">
-              <FaYoutube
-                size={30}
-                style={{ color: iconColor, marginRight: "2rem" }}
-                onClick={navToYT}
-              />
-            </div>
-          </div>
+          <nav className="social" aria-label="Social profiles">
+            {socialLinks.map(({ href, label, Icon }, index) => (
+              <a
+                key={label}
+                href={href}
+                className="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                data-aos="zoom-in"
+                data-aos-delay={100 * (index + 1)}
+              >
+                <Icon size={22} aria-hidden="true" />
+              </a>
+            ))}
+          </nav>
         </div>
       </div>
     </div>

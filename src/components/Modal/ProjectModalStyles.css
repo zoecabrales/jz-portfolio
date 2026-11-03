@@ -4,7 +4,8 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #000000;
+  height: 100dvh;
+  background-color: var(--page-bg);
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -13,9 +14,10 @@
 }
 
 .modal-container {
-  background-color: #000000;
+  background-color: var(--page-bg);
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   overflow-y: auto;
   position: relative;
   animation: fadeIn 0.3s ease;
@@ -26,9 +28,9 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  background: rgba(0, 0, 0, 0.8);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  color: white;
+  background: var(--surface-bg);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
   font-size: 32px;
   cursor: pointer;
   z-index: 99999;
@@ -43,9 +45,9 @@
 }
 
 .modal-close-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: rotate(90deg) scale(1.1);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(var(--accent-rgb), 0.14);
+  transform: translateY(-2px);
+  border-color: var(--accent-color);
 }
 
 .modal-content {
@@ -55,7 +57,7 @@
 }
 
 .modal-title {
-  color: white;
+  color: var(--text-primary);
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: center;
@@ -71,7 +73,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 3px;
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(90deg, transparent 0%, var(--accent-color) 50%, transparent 100%);
 }
 
 .modal-image-main {
@@ -83,8 +85,8 @@
   overflow: hidden;
   border-radius: 12px;
   margin-bottom: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
+  background: var(--surface-muted);
   padding: 10px;
 }
 
@@ -109,21 +111,22 @@
   height: 80px;
   border-radius: 8px;
   overflow: hidden;
-  cursor: pointer;
   border: 2px solid transparent;
   transition: all 0.3s ease;
   flex-shrink: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--surface-muted);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2px;
+  cursor: pointer;
+  font: inherit;
 }
 
 .thumbnail.active {
-  border-color: white;
+  border-color: var(--accent-color);
   transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.3);
 }
 
 .thumbnail img {
@@ -141,7 +144,7 @@
 
 .modal-description h3,
 .modal-tech h3 {
-  color: white;
+  color: var(--text-primary);
   margin-bottom: 10px;
   font-size: 1.3rem;
   position: relative;
@@ -157,12 +160,12 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: rgba(255, 255, 255, 0.3);
+  background: var(--border-color);
 }
 
 .modal-description p,
 .modal-tech p {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary);
   line-height: 1.6;
   font-size: 1rem;
 }
@@ -175,9 +178,9 @@
 
 .modal-btn {
   padding: 12px 25px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--surface-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
   border-radius: 30px;
   font-size: 1rem;
   font-weight: 600;
@@ -189,9 +192,10 @@
 }
 
 .modal-btn:hover {
-  background: rgba(255, 255, 255, 0.9);
-  color: #000;
-  transform: translateY(-3px);
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--accent-foreground);
+  transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -265,12 +269,24 @@
   .modal-close-btn {
     top: 10px;
     right: 10px;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     font-size: 24px;
   }
 
   .modal-content {
     padding: 50px 15px 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-overlay,
+  .modal-container,
+  .modal-close-btn,
+  .thumbnail,
+  .modal-image-main img,
+  .modal-btn {
+    animation: none;
+    transition: none;
   }
 }

@@ -13,23 +13,23 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  // Manage the theme state
   const [theme, setTheme] = useState(() => {
-    // Get saved theme from localStorage or default to 'dark'
-    return localStorage.getItem('theme') || 'dark';
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme === "light" || savedTheme === "dark"
+      ? savedTheme
+      : "dark";
   });
 
   useEffect(() => {
-    // Save theme changes to localStorage
-    localStorage.setItem('theme', theme);
-    // Apply theme class to body
-    document.body.className = theme;
+    localStorage.setItem("theme", theme);
+    document.body.classList.remove("light", "dark");
+    document.body.classList.add(theme);
   }, [theme]);
 
-  // Toggle between dark and light themes
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark');
-  };
+  const toggleTheme = () =>
+    setTheme((previousTheme) =>
+      previousTheme === "dark" ? "light" : "dark"
+    );
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

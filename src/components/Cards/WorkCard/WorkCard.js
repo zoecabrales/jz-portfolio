@@ -1,81 +1,101 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import "./WorkCardStyles.css";
 import ProjectModal from "../../Modal/ProjectModal";
-import { useTheme } from "../../../context/ThemeContext";
 
 const WorkCard = ({
   imgsrc,
+  cover,
   screenshots,
+  category,
   title,
   text,
   view,
   tools,
   source,
 }) => {
-  const { theme } = useTheme();
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const cardRef = useRef(null);
-  const descriptionRef = useRef(null);
-
-  // Handle card click to open modal
-  const handleCardClick = () => {
-    setIsModalOpen(true);
-  };
-
-  // No longer need auto-rotate for card view
-
-  // No hover effect needed anymore
+  const previewImage = imgsrc || cover || screenshots?.[0];
+  const projectScreenshots = screenshots?.length
+    ? cover
+      ? [cover, ...screenshots.filter((screenshot) => screenshot !== cover)]
+      : screenshots
+    : previewImage
+      ? [previewImage]
+      : [];
+  const technologies = tools
+    ?.replace(/^Tools Used:\s*/i, "")
+    .split(",")
+    .map((technology) => technology.trim())
+    .filter(Boolean);
+  const sourceUrl = source && source !== "#" ? source : null;
+  const viewUrl = view && view !== "#" ? view : null;
 
   return (
     <>
-      <div
-        ref={cardRef}
-        className={`project-card ${theme}`}
+      <article
+        className={`project-card ${
+          category?.startsWith("Mobile") ? "mobile-project" : ""
+        }`}
         data-aos="fade-up"
         data-aos-delay="100"
         data-aos-duration="400"
       >
-        <h2 className="project-title">{title}</h2>
-        <div className="project-details">
-          <div ref={descriptionRef} className="project-description">
-            <p>{text}</p>
+        {previewImage && (
+          <div className="project-preview">
+            <img
+              className="project-image"
+              src={previewImage}
+              alt={`${title} preview`}
+              loading="lazy"
+            />
           </div>
-          <div className="view-more-container">
+        )}
+        <div className="project-card-content">
+          {category && <p className="project-category">{category}</p>}
+          <h3 className="project-title">{title}</h3>
+          <p className="project-description">{text}</p>
+          {technologies?.length > 0 && (
+            <ul className="project-technologies" aria-label="Technologies used">
+              {technologies.map((technology) => (
+                <li key={technology}>{technology}</li>
+              ))}
+            </ul>
+          )}
+          <div className="project-card-actions">
             <button
-              className={`view-more-btn ${theme}`}
+              className="project-details-btn"
               onClick={(e) => {
                 e.stopPropagation();
                 setIsModalOpen(true);
               }}
             >
-              <span>Click for more info</span>
+              More details
             </button>
-          </div>
-          <div className="project-btns">
-            <a
-              href={source}
-              className={`btn ${theme}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View source code"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <span>Code</span>
-            </a>
-            <a
-              href={view}
-              className={`btn ${theme}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View demo"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <span>Demo</span>
-            </a>
+            {sourceUrl && (
+              <a
+                href={sourceUrl}
+                className="project-external-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${title} source code`}
+              >
+                Code
+              </a>
+            )}
+            {viewUrl && (
+              <a
+                href={viewUrl}
+                className="project-external-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${title} demo`}
+              >
+                Demo
+              </a>
+            )}
           </div>
         </div>
-      </div>
+      </article>
 
       {/* Project Modal */}
       <ProjectModal
@@ -85,9 +105,9 @@ const WorkCard = ({
           title,
           text,
           tools,
-          screenshots,
-          view,
-          source,
+          screenshots: projectScreenshots,
+          view: viewUrl,
+          source: sourceUrl,
         }}
       />
     </>

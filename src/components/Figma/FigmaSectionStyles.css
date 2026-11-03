@@ -1,8 +1,8 @@
 .figma-section {
     width: 100%;
-    padding: 6rem 0;
-    background-color: black;
-    color: white;
+    padding: clamp(4rem, 7vw, 5.5rem) 1.25rem;
+    background-color: var(--page-bg);
+    color: var(--text-primary);
     text-align: center;
 }
 
@@ -16,13 +16,13 @@
 }
 
 .figma-container h2 {
-    font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
 
 .figma-container h3 {
-    font-size: 1.5rem;
-    color: #ddd;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.6;
+    color: var(--text-secondary);
     margin-bottom: 2rem;
 }
 
@@ -40,14 +40,6 @@
 
 @media screen and (max-width: 740px) {
     .figma-container {
-        padding: 0 1rem;
-    }
-
-    .figma-container h2 {
-        font-size: 2rem;
-    }
-
-    .figma-container h3 {
-        font-size: 1.2rem;
+        padding: 0;
     }
 }

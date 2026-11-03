@@ -7,41 +7,20 @@ import "../common/SectionHeadingStyles.css";
 const Work = () => {
   return (
     <div className="work-container">
-      {/* Mobile Projects Section */}
       <div className="section-container">
         <h1 className="section-heading project-heading">Mobile Projects</h1>
         <div className="project-container">
-          {MobileCardData.map((item, index) => (
-            <WorkCard
-              key={index}
-              imgsrc={item.imgsrc}
-              screenshots={item.screenshots}
-              title={item.title}
-              text={item.text}
-              view={item.view}
-              source={item.source}
-              tools={item.tools}
-              dep={item.dep}
-            />
+          {MobileCardData.map((item) => (
+            <WorkCard key={item.title} {...item} />
           ))}
         </div>
       </div>
 
-      {/* Web Projects Section */}
       <div className="section-container">
         <h1 className="section-heading project-heading">Web Projects</h1>
         <div className="project-container">
-          {WorkCardData.map((item, index) => (
-            <WorkCard
-              key={index}
-              imgsrc={item.imgsrc}
-              title={item.title}
-              text={item.text}
-              view={item.view}
-              source={item.source}
-              tools={item.tools}
-              dep={item.dep}
-            />
+          {WorkCardData.map((item) => (
+            <WorkCard key={item.title} {...item} />
           ))}
         </div>
       </div>

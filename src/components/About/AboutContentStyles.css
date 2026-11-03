@@ -1,13 +1,21 @@
 .about {
   width: 100%;
-  padding: 6rem 1rem;
-  background-color: black;
+  padding: clamp(4rem, 7vw, 5.5rem) clamp(1.25rem, 4vw, 2rem);
+  background-color: var(--page-bg);
 }
 
-/* Heading styling */
 .heading {
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
   text-align: center;
-  margin-bottom: 2rem;
+}
+
+.about .heading p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.7;
 }
 
 /* Social Media Title */
@@ -18,7 +26,7 @@
 
 .social-media-title h2 {
   font-size: 2rem;
-  color: #eee;
+  color: var(--text-primary);
 }
 
 /* Container for the YouTube video */
@@ -60,7 +68,7 @@
 
 .icon-item p {
   margin-top: 0.5rem;
-  color: #eee;
+  color: var(--text-secondary);
   font-size: 1rem;
 }
 
@@ -70,7 +78,7 @@
 }
 
 .icon-item:hover p {
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .icon-item:hover svg {
@@ -84,7 +92,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: #fff;
+  color: var(--text-primary);
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -96,18 +104,18 @@
 
 .tech-icon:hover {
   transform: scale(1.1);
-  color: #f6c453;
+  color: var(--accent-color);
 }
 
 .tech-icon:hover p {
-  color: #f6c453;
+  color: var(--accent-color);
 }
 
 .description-box {
   position: absolute;
   bottom: -80px;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #f6c453;
+  background-color: var(--surface-bg);
+  color: var(--accent-color);
   padding: 0.5rem;
   border-radius: 8px;
   width: 120px;
@@ -127,9 +135,11 @@
 /* Tech icons container */
 .tech-icons-container {
   display: flex;
+  max-width: 900px;
   justify-content: center;
   gap: 2rem;
-  margin: 2rem 0;
+  flex-wrap: wrap;
+  margin: 2.5rem auto 0;
 }
 
 .video-container {
@@ -139,7 +149,7 @@
 }
 
 .video-container h2 {
-  color: #eee;
+  color: var(--text-secondary);
   font-size: 1.6rem;
   margin-bottom: .8rem;
 }
@@ -152,13 +162,13 @@
 }
 
 .figma-container h2 {
-  color: #eee;
+  color: var(--text-secondary);
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
 }
 
 .figma-container h3 {
-  color: #ccc;
+  color: var(--text-secondary);
   font-size: 1.2rem;
   margin-bottom: 2rem;
   font-weight: normal;
@@ -203,7 +213,7 @@
 
 @media (max-width: 480px) {
   .about {
-    padding: 4rem 1rem;
+    padding: 4rem 1.25rem;
   }
 
   .heading h1 {

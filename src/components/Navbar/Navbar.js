@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./NavbarStyles.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -11,24 +11,22 @@ const Navbar = () => {
   const { theme } = useTheme();
 
   const [color, setColor] = useState(false);
-  const changeColor = () => {
-    if (window.scrollY >= 1) {
-      setColor(true);
-    } else {
-      setColor(false);
-    }
-  };
-
-  window.addEventListener("scroll", changeColor);
+  useEffect(() => {
+    const changeColor = () => setColor(window.scrollY >= 1);
+    changeColor();
+    window.addEventListener("scroll", changeColor, { passive: true });
+    return () => window.removeEventListener("scroll", changeColor);
+  }, []);
 
   return (
     <div className={`header ${color ? "header-bg" : ""} ${theme}`}>
-      <Link to="/">
-        <h1 style={{ fontFamily: "Ubuntu, sans-serif", fontStyle: "normal" }}>
-          JZ DevHub
-        </h1>
+      <Link to="/" className="header-brand" aria-label="JZ DevHub home">
+        JZ DevHub
       </Link>
-      <ul className={`nav-menu ${click ? "active" : ""}`}>
+      <ul
+        id="primary-navigation"
+        className={`nav-menu ${click ? "active" : ""}`}
+      >
         <li>
           <Link to="/project" onClick={() => setClick(false)} className={theme}>
             Projects
@@ -51,15 +49,30 @@ const Navbar = () => {
         </li> */}
       </ul>
       <div className="theme-toggle-container">
-        {color && <ThemeToggleButton />}
+        <ThemeToggleButton />
       </div>
-      <div className="hamburger" onClick={handleClick}>
+      <button
+        type="button"
+        className="hamburger"
+        onClick={handleClick}
+        aria-label={click ? "Close navigation" : "Open navigation"}
+        aria-expanded={click}
+        aria-controls="primary-navigation"
+      >
         {click ? (
-          <FaTimes size={20} style={{ color: theme === 'light' ? "#333" : "#fff" }} />
+          <FaTimes
+            size={20}
+            aria-hidden="true"
+            style={{ color: theme === "light" ? "#333" : "#fff" }}
+          />
         ) : (
-          <FaBars size={20} style={{ color: theme === 'light' ? "#333" : "#fff" }} />
+          <FaBars
+            size={20}
+            aria-hidden="true"
+            style={{ color: theme === "light" ? "#333" : "#fff" }}
+          />
         )}
-      </div>
+      </button>
     </div>
   );
 };

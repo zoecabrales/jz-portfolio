@@ -1,45 +1,50 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import HeroImg from "../components/Home/HeroImg";
 import Footer from "../components/Footer/Footer";
-import Work from "../components/data/Work";
 import About from "../components/About/AboutContent";
-import CertCard from "../components/Cards/CertCard/CertCard";
 import Exp from "../components/data/Exp";
 import MobileCardData from "../components/data/MobileCardData";
+import WorkCardData from "../components/data/WorkCardData";
 import WorkCard from "../components/Cards/WorkCard/WorkCard";
 import YouTubeSection from "../components/YouTube/YouTubeSection";
 import FigmaSection from "../components/Figma/FigmaSection";
 import "../components/common/SectionHeadingStyles.css";
 
-const Home = ({ heading, text }) => {
+const FeaturedProjects = [...WorkCardData, ...MobileCardData];
+
+const Home = () => {
   return (
     <div>
       <Navbar />
       <HeroImg />
-      <About />
-      <Exp />
-      {/* Mobile Projects Section */}
-      <div className="work-container">
+      <section
+        className="work-container"
+        aria-labelledby="selected-projects-title"
+      >
         <div className="section-container">
-          <h1 className="section-heading project-heading">Mobile Projects</h1>
+          <h2
+            id="selected-projects-title"
+            className="section-heading project-heading"
+          >
+            Selected Projects
+          </h2>
+          <p className="projects-intro">
+            A selection of web and mobile projects I’ve built.
+            <Link to="/project" className="projects-all-link">
+              Explore all projects
+            </Link>
+          </p>
           <div className="project-container">
-            {MobileCardData.map((item, index) => (
-              <WorkCard
-                key={index}
-                imgsrc={item.imgsrc}
-                screenshots={item.screenshots}
-                title={item.title}
-                text={item.text}
-                view={item.view}
-                source={item.source}
-                tools={item.tools}
-                dep={item.dep}
-              />
+            {FeaturedProjects.map((item) => (
+              <WorkCard key={item.title} {...item} />
             ))}
           </div>
         </div>
-      </div>
+      </section>
+      <About />
+      <Exp />
       <YouTubeSection />
       <FigmaSection />
       <Footer />

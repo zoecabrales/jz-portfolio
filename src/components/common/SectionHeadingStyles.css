@@ -1,37 +1,40 @@
-/* Common modern section heading styles */
 .section-heading {
-    text-align: center;
-    padding: 3rem 0 3rem 0;
-    color: white;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 700;
-    position: relative;
-    margin-bottom: 1rem;
+  position: relative;
+  margin: 0 auto 1.75rem;
+  padding: 0 0 1.25rem;
+  color: var(--text-primary);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  text-align: center;
 }
 
-.section-heading:after {
-    content: '';
-    position: absolute;
-    bottom: 1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+.section-heading::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 42px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent-color);
+  content: "";
+  transform: translateX(-50%);
 }
 
-/* Responsive styles */
-@media screen and (max-width: 1200px) {
-    .section-heading {
-        font-size: 2.2rem;
-    }
+.section-heading.project-heading {
+  margin: 0 0 0.75rem;
+  padding: 0;
+  text-align: left;
+}
+
+.section-heading.project-heading::after {
+  display: none;
 }
 
 @media screen and (max-width: 740px) {
-    .section-heading {
-        font-size: 2rem;
-        padding: 3rem 0 1.5rem 0;
-    }
+  .section-heading {
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.6rem, 7vw, 2rem);
+  }
 }

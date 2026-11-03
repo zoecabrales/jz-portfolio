@@ -1,7 +1,7 @@
 .pricing {
     width: 100%;
     padding: 6rem 1rem;
-    background-color: black;
+    background-color: var(--page-bg);
 }
 
 .card-container {
@@ -37,8 +37,9 @@
 }
 
 .card:hover,
-.card.hovered {
-    transform: translateY(-5px) scale(1.03);
+.card.hovered,
+.card:focus-within {
+    transform: translateY(-4px) scale(1.01);
     height: auto;
     z-index: 10;
 }
@@ -46,11 +47,13 @@
 .card.dark:hover,
 .card.dark.hovered {
     background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(var(--accent-rgb), 0.45);
 }
 
 .card.light:hover,
 .card.light.hovered {
     background: rgba(255, 255, 255, 1);
+    border-color: var(--accent-contrast);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
@@ -80,15 +83,15 @@
 }
 
 .card.light a {
-    color: #0066cc;
+    color: var(--accent-contrast);
 }
 
 .card.dark a:hover {
-    color: white;
+    color: var(--accent-color);
 }
 
 .card.light a:hover {
-    color: #0099ff;
+    color: var(--accent-contrast);
 }
 
 .hover-info {
@@ -109,7 +112,8 @@
 }
 
 .hover-info.visible,
-.card.hovered .hover-info {
+.card.hovered .hover-info,
+.card:focus-within .hover-info {
     opacity: 1;
     max-height: 200px; /* Adjust as needed */
 }
@@ -150,7 +154,36 @@
 @media screen and (max-width: 740px) {
     .card-container {
         grid-template-columns: 1fr;
-        max-width: 90%;
+        max-width: 100%;
         margin: auto;
+        padding: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card,
+    .hover-info {
+        transition: none;
+    }
+}
+
+@media (max-width: 940px), (hover: none) {
+    .card {
+        height: auto;
+        min-height: 0;
+        cursor: default;
+        transform: none;
+    }
+
+        .card:hover,
+        .card.hovered,
+        .card:focus-within {
+            transform: none;
+        }
+
+    .hover-info {
+        max-height: none;
+        overflow: visible;
+        opacity: 1;
     }
 }

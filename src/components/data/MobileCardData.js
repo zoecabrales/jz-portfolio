@@ -1,9 +1,11 @@
 const MobileCardData = [
   {
-    title: "Focushub",
+    title: "FocusHub",
+    category: "Mobile app",
+    cover: require("../../assets/FH2.png"),
     text: "A productivity mobile app designed to help users stay focused and manage their time effectively. Features include task tracking, focus timer, and productivity analytics.",
-    view: "#",
-    source: "#",
+    view: null,
+    source: null,
     tools: "Tools Used: React Native, Expo, Firebase, Redux",
     screenshots: [
       require("../../assets/FH1.png"),
@@ -16,6 +18,8 @@ const MobileCardData = [
   },
   {
     title: "Word Master",
+    category: "Mobile game",
+    cover: require("../../assets/WM3.jpg"),
     text: "A React Native mobile game inspired by Wordle with multiple difficulty levels, timer-based gameplay, and statistics tracking. Features include word hints, interactive keyboard, and persistent game stats.",
     view: "https://github.com/zoecabrales/WordleClone/releases/tag/v1.0.3",
     source: "https://github.com/zoecabrales/WordleClone",
