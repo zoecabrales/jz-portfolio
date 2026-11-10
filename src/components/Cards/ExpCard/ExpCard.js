@@ -1,19 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import "./ExpCardStyles.css";
 import { useTheme } from "../../../context/ThemeContext";
 
 const ExpCard = ({ company, project, role, contract, duties }) => {
   const { theme } = useTheme();
-  const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef(null);
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
 
   // Use a class-based approach for hover instead of state
   useEffect(() => {
@@ -22,12 +13,10 @@ const ExpCard = ({ company, project, role, contract, duties }) => {
 
     const handleMouseEnterEvent = () => {
       card.classList.add("hovered");
-      setIsHovered(true); // Keep the state in sync for any components that might use it
     };
 
     const handleMouseLeaveEvent = () => {
       card.classList.remove("hovered");
-      setIsHovered(false); // Keep the state in sync for any components that might use it
     };
 
     card.addEventListener("mouseenter", handleMouseEnterEvent);
