@@ -1,5 +1,27 @@
 const WorkCardData = [
   {
+    cover: require("../../assets/DR1.jpg"),
+    screenshots: [
+      require("../../assets/DR1.jpg"),
+      require("../../assets/DR2.jpg"),
+      require("../../assets/DR3.jpg"),
+      require("../../assets/DR4.jpg"),
+      require("../../assets/DR5.jpg"),
+      require("../../assets/DR6.jpg"),
+      require("../../assets/DR7.jpg"),
+      require("../../assets/DR8.jpg"),
+      require("../../assets/DR9.jpg"),
+      require("../../assets/DR10.jpg"),
+      require("../../assets/DR11.jpg"),
+    ],
+    category: "Progressive web app",
+    title: "Devo Reflect",
+    text: "A Christian devotional PWA for reading the Bible, journaling, and growing in faith with others. Read the ASV with highlights and bookmarks, get book and section background, write SOAP journal entries, follow reading plans, memorize verses, track prayers and streaks, share verse cards, and connect with your Brethren to see the verses they share.",
+    view: "https://devo-reflect.vercel.app/",
+    source: "https://github.com/zoecabrales/devo-reflect",
+    tools: "Tools Used: React Native Web, Expo Router, TypeScript, Firebase Auth, Firestore, PWA, Vercel for deployment",
+  },
+  {
     cover: require("../../assets/CS1.jpg"),
     screenshots: [
       require("../../assets/CS1.jpg"),

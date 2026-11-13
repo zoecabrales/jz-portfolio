@@ -11,7 +11,7 @@ const Project = () => {
       <Navbar />
       <HeroImg2
         heading="PROJECTS"
-        text="A selection of web and mobile projects I've built."
+        text="A selection of web apps I've built and shipped."
       />
       <Work />
       <Footer />

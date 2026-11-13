@@ -5,14 +5,14 @@ import HeroImg from "../components/Home/HeroImg";
 import Footer from "../components/Footer/Footer";
 import About from "../components/About/AboutContent";
 import Exp from "../components/data/Exp";
-import MobileCardData from "../components/data/MobileCardData";
 import WorkCardData from "../components/data/WorkCardData";
 import WorkCard from "../components/Cards/WorkCard/WorkCard";
 import YouTubeSection from "../components/YouTube/YouTubeSection";
 import FigmaSection from "../components/Figma/FigmaSection";
 import "../components/common/SectionHeadingStyles.css";
 
-const FeaturedProjects = [...WorkCardData, ...MobileCardData];
+// Mobile projects (MobileCardData) are hidden for now.
+const FeaturedProjects = WorkCardData;
 
 const Home = () => {
   return (
@@ -31,7 +31,7 @@ const Home = () => {
             Selected Projects
           </h2>
           <p className="projects-intro">
-            A selection of web and mobile projects I’ve built.
+            A selection of web apps I’ve built and shipped.
             <Link to="/project" className="projects-all-link">
               Explore all projects
             </Link>
